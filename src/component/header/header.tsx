@@ -1,14 +1,15 @@
 import React from 'react';
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+import { generateString } from '../../specialFunction/specialFunction';
 import "./header.scss";
 
 const Header: React.FC = () => {
 
-  const links = ["main", "about", "sign-in", "story", "profile"];
+  const links = ["main", "tests", "story", "sign-in", "profile"];
 
   const list = links.map((link: string) => {
     return (
-      <li className="list-link__item">
+      <li className="list-link__item" key={generateString()}>
         <NavLink 
           activeStyle={{
             fontWeight: "bold",
@@ -17,10 +18,10 @@ const Header: React.FC = () => {
           }} 
           style={{
             fontWeight: "bold",
-            color: "black"
+            color: "black",
+            textDecoration: "none"
           }}
           to={`/${link}`}
-          key={link}
         >
           {link}
         </NavLink>

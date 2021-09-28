@@ -1,0 +1,37 @@
+.options {
+  height: 100%;
+  max-width: 350px;
+  position: fixed;
+  z-index: 100;
+  right: 0;
+  overflow: auto;
+  padding: 10px;
+
+  & .options__list {
+    margin-top: 20px;
+    box-sizing: border-box;
+    width: 350px;
+    list-style: none;
+  }
+  
+  & .group__checkbox {
+    padding: 10px;
+    text-align: center;
+    justify-content: space-around;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  & .option__checkbox {
+    margin-left: 20px;
+  }
+  
+  & .btn-apply {
+    width: 60%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0;
+  }
+  
+}

@@ -3,14 +3,12 @@
   width: 100%;
 
   .registration {
-    flex-direction: column;
     font-size: 20px;
     justify-content: center;
     flex-direction: column;
     margin-left: 50%;
-    transform: translateX(-40%);
+    transform: translateX(-50%);
     position: absolute;
-
 
     .registration__item {
       flex-direction: column;
