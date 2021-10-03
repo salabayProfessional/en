@@ -24,23 +24,26 @@ const Options: React.FC = () => {
       initialValues={initialValues} 
       onSubmit={(values) => onSubmit(values)}
     >
-      {() => {
+      {({values}: any) => {
         return (
           <Form>
-            <div className="options bg-dark">
-              <h1 className="title">OPTIONS</h1>
+            <div className="options bg-dark">    
+              <div className="options__inner">
+                <h1 className="title">OPTIONS</h1>
                 <div className="options__list">
                   {
                     optionsData.map((item, idx) => {
+                      const { title } = item;
                       return (
-                        <li className="options__list-item" key={`options-item-${idx}`}>     
-                          <h3 className="title-left">{item.title}</h3>
+                        <li key={`options-item-${idx}`}>     
+                          <h3>{title}</h3>
                           <div className="group__checkbox">
                             {item.options.map((o: any, id: number) => {
                               return (
                                 <div className="option__checkbox" key={"group__checkbox" + id}>
-                                  {o}
-                                  <Field name={item.title} value={o} type="radio" />
+                                  <div>{o}</div>
+                                  <div className={`input-checkbox ${o === values[title]? "active" : ""}`} />
+                                  <Field name={item.title} value={o} type="radio" className="filed-checkbox" />
                                 </div>
                               )
                             })}
@@ -50,7 +53,9 @@ const Options: React.FC = () => {
                     })
                   } 
                 </div>
-              <button type="submit" className="btn btn-success btn-apply">APPLY</button>
+              </div>
+              
+              <button type="submit" className="btn btn-outline-success btn-apply">APPLY</button>
             </div>
           </Form>
         )

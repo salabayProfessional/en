@@ -14,38 +14,36 @@ const View: React.FC<ViewProps> = ({
 }) => {
   
 	return (
-		<div className="test-view">
-			<button type="button" className="btn btn-success btn-lg" onClick={() => toggleOptions()} disabled={start}>OPTIONS</button>     
-				<div className="form-group">
-					{start && 
-						<div>
-
-							<h1 className="title">{test.name}</h1>
-
-							<p className="text__under-title">en - ua</p>
-
-							<h2 className="title">
-								{
-									options.type === "en-ua" && start? 
-									test.words[count].en : 
-									test.words[count].ua 
-								}
-							</h2>
-
-							<h3 className="title">Answer</h3>
-
-							<p className="text__under-title">this test bla bla lba for you and this very cool</p>
-
-							<Field className="form-control-lg btn-lg"
-                name="answer" 
-                type="text" 
-                placeholder="GO WRITE" 
-                id="inputLarge" 
-              />
-						</div>
-					}
-          <div>{ children }</div>
-		  </div>
+		<div className="test bg-dark">
+			<div className="test-view">
+				<button type="button" className="btn btn-outline-success btn-lg" onClick={() => toggleOptions()} disabled={start}>OPTIONS</button>     
+				<div>
+					<div className="form-group">
+							{start && 
+								<div className="pass-panel">
+									<div className="top-part">
+										<h1 className="title">test name: {test.name}</h1>
+										<p className="under-title">type: EN _ UA</p>
+									</div>
+									<h2 className="title title_bottom_border">
+										{
+											start? 
+											test.words[randomWords[count]].en : 
+											test.words[randomWords[count]].ua 
+										}
+									</h2>
+									<Field className="form-control-lg btn-lg"
+										name="answer" 
+										type="text" 
+										placeholder="YOUR ANSWER" 
+										id="inputLarge" 
+									/>
+								</div>
+							}
+						<div>{ children }</div>
+					</div>
+				</div>
+			</div>
 	  </div>
 	)
 };

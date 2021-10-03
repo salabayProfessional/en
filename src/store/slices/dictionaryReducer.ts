@@ -1,10 +1,6 @@
 import {createSlice} from '@reduxjs/toolkit';
 
-export interface Dictionary {
-
-};
-
-const initialState: Dictionary = {
+const initialState: any = {
 
 }
 

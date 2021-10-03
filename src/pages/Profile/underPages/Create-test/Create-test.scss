@@ -1,12 +1,15 @@
-.table-words {
-  overflow-y: scroll;
-  height: 600px;
-}
+.create-page {
+  display: flex;
 
-.right__party {
+  & .left {
+    overflow-y: scroll;
+    height: 600px;
+  }
 
-}
-
-.left__party {
-  padding: 20px;
+  & .right {
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
 }

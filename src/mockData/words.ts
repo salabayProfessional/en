@@ -552,6 +552,7 @@ whole bunch;
 litteraly;
 i was sore the next day;
 advance;
+influence;
 `;
 const ua = `
 Знищити;
@@ -1099,7 +1100,7 @@ i вниз;
 це мене лякає;
 це дивно;
 фактично;
-експедиційно;
+бездоганно;
 я згадую;
 я перебуваю під враженням;
 відповідний;
@@ -1107,6 +1108,7 @@ i вниз;
 буквально;
 наступного дня мені стало боляче;
 заздалегідь;
+впливати;
 `;
 
 export const enWords = en.split(';');
@@ -1114,7 +1116,7 @@ export const uaWords = ua.split(';');
 
 export const allWords = enWords.map((word, id) => {
     return {
-        en: word.replace(/[\n\t]+/g, '').split(" ").join("").trim(),
+        en: word.replace(/[\n\t]+/g, '').split("").join("").trim(),
         ua: uaWords[id].replace(/[\n\t]+/g, '').split("").join("").trim(),
     }
 });

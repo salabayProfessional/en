@@ -16,7 +16,7 @@ const CreateTest: React.FC = () => {
     amount: 10,
     type: "en-ua",
     timer: 60,
-    words: [],
+    selectedWords: [],
   }
 
   const list = allWords.map((word: {en: string, ua: string}) => {
@@ -25,13 +25,13 @@ const CreateTest: React.FC = () => {
         <td>{word.en}</td>
         <td>{word.ua}</td>
         <th>
-          <Field type="checkbox" value={`${word.en}&${word.ua}`} name="words" />
+          <Field type="checkbox" value={`${word.en}&${word.ua}`} name="selectedWords" />
         </th>
       </tr>
     )
   });
 
-  const onSubmit = (handleSubmit: Function, values: any, setFieldValue: any) => {
+  const onSubmit = (values: any, setFieldValue: any) => {
       const words = values.words.map((word: string) => {
         const idx = word.indexOf("&");
         return {en: word.slice(0, idx), ua: word.slice(idx + 1)};// split words on "&" en-word&ua-word
@@ -43,6 +43,7 @@ const CreateTest: React.FC = () => {
         type: "en-ua",
         options: values.options
       }));
+      
       setFieldValue("name", "");
       setFieldValue("timer", 60);
       setFieldValue("amount", 10);
@@ -53,56 +54,81 @@ const CreateTest: React.FC = () => {
   return (
     <>
     <div className="create-test">
-      <h1>Create test</h1>
-      <Formik initialValues={initialValues} onSubmit={() => {}}>
+      <Formik initialValues={initialValues} onSubmit={(values, {setFieldValue}) => onSubmit(values, setFieldValue)}>
         {({values, handleSubmit, setFieldValue}) => {
           return (
             <Form>
-              <div className="row left__party">
-                <div className="table-words col-6">
-                  <Table className="bg-dark">
-                    <tbody>
-                      {
-                        list
-                      }
-                    </tbody>
-                  </Table>
+              <header>
+                <h2>Words selected: {values.selectedWords.length}</h2>
+              </header>
+              <div className="create-page">
+                <div className="left col-6">
+                  <div className="left-body">
+                    <div className="table-words">
+                      <Table className="bg-dark">
+                        <tbody>
+                          {
+                            list
+                          }
+                        </tbody>
+                      </Table>
+                    </div>
+                  </div>
                 </div>
-                <div className="col-6 right__party">
-                  <FormGroup>
-                    <Label for="Name">Name</Label>
-                    <Field className="form-control" type="text" placeholder="name" name="name" id="Name" />
-                  </FormGroup>
-                  <FormGroup>
-                    <Label for="Type">Type</Label>
-                    <Field className="form-control" as="select" name="type" id="Type">
-                      <option>EN - UA</option>
-                      <option>UA - EN</option>
-                    </Field>
-                  </FormGroup>
-                  <FormGroup>
-                    <Label for="Amount">Amount</Label>
-                    <Field className="form-control" as="select" name="amount" id="Amount">
-                      <option>10</option>
-                      <option>15</option>
-                      <option>20</option>
-                      <option>25</option>
-                      <option>30</option>
-                    </Field>
-                  </FormGroup>
-                  <FormGroup>
-                    <Label for="Timer">Timer</Label>
-                    <Field className="form-control" as="select" name="timer" id="Timer">
-                      <option>30</option>
-                      <option>60</option>
-                      <option>90</option>
-                      <option>120</option>
-                      <option>150</option>
-                    </Field>
-                  </FormGroup>
-                  <FormGroup>
-                  <Button className="form-control" color="success" type="button" onClick={() => onSubmit(handleSubmit, values, setFieldValue)}>CREATE</Button>
-                  </FormGroup>
+
+                <div className="right col-6">
+                  <div className="right-body">
+                    <FormGroup>
+                      <Label for="Name">Name</Label>
+                      <Field className="form-control" type="text" placeholder="name" name="name" id="Name" />
+                    </FormGroup>
+                    <FormGroup>
+                      <Label for="Type">Type</Label>
+                      <Field className="form-control" as="select" name="type" id="Type">
+                        <option>EN - UA</option>
+                        <option>UA - EN</option>
+                      </Field>
+                    </FormGroup>
+                    <FormGroup>
+                      <Label for="Amount">Amount</Label>
+                      <Field className="form-control" as="select" name="amount" id="Amount">
+                        <option>10</option>
+                        <option>15</option>
+                        <option>20</option>
+                        <option>25</option>
+                        <option>30</option>
+                      </Field>
+                    </FormGroup>
+                    <FormGroup>
+                      <Label for="Timer">Timer</Label>
+                      <Field className="form-control" as="select" name="timer" id="Timer">
+                        <option>30</option>
+                        <option>60</option>
+                        <option>90</option>
+                        <option>120</option>
+                        <option>150</option>
+                      </Field>
+                    </FormGroup>
+                  </div>
+                  <footer>
+                    <FormGroup>
+                      <Button 
+                        className="form-control" 
+                        color="success" 
+                        type="button" 
+                        onClick={() => {
+                          if(values.selectedWords.length !== values.amount) {
+                            return alert(`You need to select a ${values.amount}`)
+                          } else {
+                            alert("success");
+                            handleSubmit();
+                          }
+                      }}
+                      >
+                        CREATE
+                      </Button>
+                    </FormGroup>
+                  </footer>
                 </div>
               </div>
             </Form>

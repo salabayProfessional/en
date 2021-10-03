@@ -1,0 +1,14 @@
+.words-list {
+  height: 600px;
+  overflow-y: scroll;
+}
+
+.bottom-panel {
+  display: flex;
+  justify-content: space-between;
+
+  .bottom-panel__left {
+    display: flex;
+    justify-content: space-between;
+  }
+}

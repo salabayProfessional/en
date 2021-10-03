@@ -7,9 +7,6 @@ import Dictionary from '../../pages/Profile/underPages/Dictionary/Dictionary';
 import Results from '../../pages/Profile/underPages/Results/Results';
 import AllTest from '../../pages/Profile/underPages/All-test/All-test';
 import CreateTest from '../../pages/Profile/underPages/Create-test/Cteate-test';
-import { generateString } from '../../specialFunction/specialFunction';
-
-const arr = ["setting", "dictionary", "results", "all tests", "create test"];
 
 const Tabs: React.FC = () => {
   const [activeTab, setActiveTab] = useState('setting');
@@ -19,27 +16,64 @@ const Tabs: React.FC = () => {
     if(activeTab !== tab) setActiveTab(tab);
   };
 
-  const tabsLinks = arr.map((item) => {
-
-    return (
-      <NavItem key={generateString()}>
-        <NavLink
-          className={classnames({ active: activeTab === item })}
-          onClick={() => { 
-            toggle(item);
-            history.push(item);
-           }}
-        >
-          {item}
-        </NavLink>
-      </NavItem>
-    );
-  });
-
   return (
     <div className="tabs-border">
       <Nav tabs>
-        { tabsLinks }
+        <NavItem>
+          <NavLink
+            className={classnames({ active: activeTab === "setting" })}
+            onClick={() => { 
+              toggle("setting");
+              history.push("setting");
+            }}
+          >
+            setting
+          </NavLink>
+        </NavItem>
+        <NavItem>
+        <NavLink
+          className={classnames({ active: activeTab === "dictionary" })}
+          onClick={() => { 
+            toggle("dictionary");
+            history.push("dictionary");
+           }}
+        >
+         dictionary
+        </NavLink>
+      </NavItem>
+      <NavItem>
+        <NavLink
+          className={classnames({ active: activeTab === "results" })}
+          onClick={() => { 
+            toggle("results");
+            history.push("results");
+           }}
+        >
+         results
+        </NavLink>
+      </NavItem>
+      <NavItem>
+        <NavLink
+          className={classnames({ active: activeTab === "all tests" })}
+          onClick={() => { 
+            toggle("all tests");
+            history.push("all tests");
+           }}
+        >
+          all tests
+        </NavLink>
+      </NavItem>
+      <NavItem>
+        <NavLink
+          className={classnames({ active: activeTab === "create test" })}
+          onClick={() => { 
+            toggle("create test");
+            history.push("create test");
+           }}
+        >
+          create test
+        </NavLink>
+      </NavItem>
       </Nav>
       <TabContent activeTab={activeTab}>
         <TabPane tabId="setting">

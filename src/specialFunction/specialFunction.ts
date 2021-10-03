@@ -1,11 +1,12 @@
-export const generateString = () => Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 5);
+import { allWords } from "../mockData/words";
 
-export const shuffle = (array: any) => {
+const generateString = () => Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 5);
+
+const shuffle = (array: any) => {
   return array.sort(() => Math.random() - 0.5);
 };
 
-export const makeTest: any = (words: any, amount: number = 10) => {
-
+const test: any = (words: any) => (amount: number = 10) => {
   let randomID = [];
   let result: any = {name: generateString(), words: []};
 
@@ -18,7 +19,7 @@ export const makeTest: any = (words: any, amount: number = 10) => {
   return result
 };
 
-export const auditTranslate = (
+const auditTranslate = (
   test: any,
   answers: string[],
   options: any,
@@ -44,3 +45,11 @@ export const auditTranslate = (
     options,
   };
 };
+
+export {
+  shuffle,
+  generateString,
+  auditTranslate,
+}
+
+export const makeTest = test(allWords);

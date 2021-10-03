@@ -1,0 +1,49 @@
+.setting-page {
+
+  .user-data {
+    height: 1500px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+
+    .user-data-header {
+      display: flex;
+      border-bottom: 1px solid white;
+    }
+
+    .user-data-body {
+      display: flex;
+      border-bottom: 1px solid white;
+    }
+
+    .user-data-footer {
+      height: 310px;
+      background: rgb(52, 69, 88);
+      flex-wrap: wrap;
+    }
+    
+    .set-photo {
+      display: flex;
+      flex-direction: column;
+      width: 200px;
+      height: 260px;
+      justify-content: space-between;
+    }
+  }
+  .btn {
+    margin-top: 10px;
+  }
+}
+
+#avatar {
+  width: 540px;
+  height: 350px;
+  border: 1px solid white;
+  border-radius: 10px;
+  background-position: center;
+  background-size: contain;
+}  
+
+.btn-100 {
+  width:  100%;
+}

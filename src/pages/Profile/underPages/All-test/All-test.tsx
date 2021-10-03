@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Button } from 'reactstrap';
-import ModalInfo from '../../../../component/Modal-info/Modal-info';
+import { ModalInfo } from '../../../../component/Modal/Modals';
+import { generateString } from '../../../../specialFunction/specialFunction';
+import { RootReducer } from '../../../../store/slices/types';
 import "./All-test.scss";
 
 interface Test {
@@ -15,15 +17,14 @@ interface Test {
 }
 
 const AllTest: React.FC = () => {
-  const allTests = useSelector((state: any) => state.tests.allTests);
+  const allTests = useSelector((state: RootReducer) => state.tests.allTests);
   const [isModal, toggleIsModal] = useState(false);
   const [infoID, setInfoId] = useState("");
   const toggleIsInfoModal = () => toggleIsModal(!isModal);
 
   const list = allTests.map((test: Test) => {
-    console.log(test);
     return (
-      <div className="test__item">
+      <div className="test__item" key={generateString()}>
         <h3 className="title">{test.name}</h3>
         <Button className="btn btn-danger btn-center" type="button" onClick={() => {
           setInfoId(test.name);
@@ -37,7 +38,7 @@ const AllTest: React.FC = () => {
     <>
       <ModalInfo 
         toggle={toggleIsInfoModal} 
-        info={allTests.find((test: Test) => test.name === infoID)} 
+        test={allTests.find((test: Test) => test.name === infoID)} 
         isModal={isModal} 
       />
       <div className="All-test">
