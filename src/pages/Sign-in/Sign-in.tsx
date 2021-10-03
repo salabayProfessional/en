@@ -1,6 +1,7 @@
 import { Form, Formik } from 'formik';
 import React from 'react';
 import * as Yup from 'yup';
+import SignForm from './component/Sign-form/Sign-form';
 import "./Sign-in.scss";
 
 const SignIn: React.FC = () => {
@@ -53,9 +54,7 @@ const SignIn: React.FC = () => {
       >
         {() => {
             return (
-              <Form>
-
-              </Form>
+              <SignForm />
             )
           }
         }
