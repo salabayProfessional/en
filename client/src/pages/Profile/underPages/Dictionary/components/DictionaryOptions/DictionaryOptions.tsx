@@ -1,0 +1,67 @@
+import React from 'react';
+import { Table } from 'reactstrap';
+import { mockData } from '../../mockData';
+
+const DictionaryOptions: React.FC<any> = ({
+  isList, 
+  activeDictionary, 
+  toggleList, 
+  randomDictionaryWords,
+  toggleActiveItem,
+  reset,
+  toggleHideColumnUa,
+  toggleHideColumnEn
+}) => {
+
+  const tableSettingList = mockData.map((item: any) => {
+    return (
+      <>
+        <tbody onClick={() => toggleActiveItem(item)} key={item.name}>
+          <tr>
+            <th scope="row">
+              {item.name}
+            </th>
+          </tr>
+        </tbody>
+       {
+         activeDictionary.name === item.name && (
+          <div className="active-option">
+            <button className="btn btn-outline-success top-10" onClick={() => randomDictionaryWords(activeDictionary)}>RANDOM</button>
+            <button className="btn btn-outline-success top-10" onClick={() => reset()}>CLEAR ANSWER</button>
+            <button className="btn btn-outline-success top-10" onClick={() => toggleHideColumnUa()}>HIDE UA COLUMN</button>
+            <button className="btn btn-outline-success top-10" onClick={() => toggleHideColumnEn()}>HIDE EN COLUMN</button>
+          </div>
+         )
+       }
+      </>
+    )
+  });
+
+  return (
+    <div className="dictionary-options">
+      <div className="dictionary-options__party">
+        <input type="text" placeholder="filter" className="btn-100" />
+      </div>
+      <div className="dictionary-options__party">
+        <button className="btn btn-outline-success btn-100">Add new dictionary</button>
+      </div>
+      <div className="dictionary-options__party">
+        <button className="btn btn-outline-success btn-100">DELETE</button>
+      </div>
+      <div className="dictionary-options__party">
+        <button className="btn btn-outline-success btn-100" onClick={() => toggleList()}>List</button>
+        {
+          isList && (
+            <Table hover>
+              {
+                tableSettingList
+              }
+            </Table>
+          )
+        }
+      </div>
+    </div>
+  )
+};
+
+export default DictionaryOptions;

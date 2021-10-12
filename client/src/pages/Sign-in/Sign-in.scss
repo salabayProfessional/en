@@ -1,0 +1,15 @@
+.sign-in {
+  position: relative;
+  min-height: 724px;
+  width: 100%;
+
+  .sign-in__inner {
+    font-size: 20px;
+    width: 60%;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: 60%;
+    transform: translateX(-60%);
+    position: absolute;
+  }
+}
