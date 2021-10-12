@@ -18,13 +18,8 @@ const Setting: React.FC = () => {
           <Form>
             <div className="setting-page">
               <div className="user-data">
-
                 <ChangesSetting />
-
-                <div className="user-data-body">
-                  <h2>Add tariff plan</h2>
-                </div>
-
+                <div className="wid-200"></div>
                 <DeleteSetting />
               </div>
             </div>

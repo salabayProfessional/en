@@ -27,20 +27,17 @@
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 370px){
   .header {
     position: fixed;
-    background: rgb(187, 187, 187);
+    background: black;
     color: black;
     width: 100%;
+    height: 150px;
   
     .inner {
       flex-direction: column;
       align-items: flex-start;
-  
-      .logo {
-  
-      }
   
       .list-link {
         list-style: none;

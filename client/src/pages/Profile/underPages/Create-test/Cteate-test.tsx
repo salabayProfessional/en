@@ -1,5 +1,5 @@
 import { Field, Formik, Form } from 'formik';
-import React from 'react';
+import React, { useMemo } from 'react';
 import { useDispatch } from 'react-redux';
 import { Button, FormGroup, Label, Table } from 'reactstrap';
 import { allWords } from '../../../../mockData/words';
@@ -19,21 +19,22 @@ const CreateTest: React.FC = () => {
     selectedWords: [],
   }
 
-  const list = allWords.map((word: {en: string, ua: string}) => {
-    console.log("as")
-    return (
-      <tr key={generateString()}>
-        <td>{word.en}</td>
-        <td>{word.ua}</td>
-        <th>
-          <Field type="checkbox" value={`${word.en}&${word.ua}`} name="selectedWords" />
-        </th>
-      </tr>
-    )
-  });
+  const list = useMemo(() => {
+    return allWords.map((word: {en: string, ua: string}) => {
+      return (
+        <tr key={generateString()}>
+          <td>{word.en}</td>
+          <td>{word.ua}</td>
+          <th>
+            <Field type="checkbox" value={`${word.en}&${word.ua}`} name="selectedWords" />
+          </th>
+        </tr>
+      )
+    })
+  }, []);
 
   const onSubmit = (values: any, setFieldValue: any) => {
-      const words = values.words.map((word: string) => {
+      const words = values.selectedWords.map((word: string) => {
         const idx = word.indexOf("&");
         return {en: word.slice(0, idx), ua: word.slice(idx + 1)};// split words on "&" en-word&ua-word
       });
@@ -49,7 +50,7 @@ const CreateTest: React.FC = () => {
       setFieldValue("timer", 60);
       setFieldValue("amount", 10);
       setFieldValue("type", "en-ua");
-      setFieldValue("words", []);
+      setFieldValue("selectedWords", []);
   };
 
   return (

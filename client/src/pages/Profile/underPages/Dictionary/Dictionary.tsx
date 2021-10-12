@@ -14,14 +14,15 @@ const Dictionary: React.FC = () => {
   const [isHideColumnEn, setIsHideColumnEn] = useState(false);
   const toggleHideColumnUa = () => setIsHideColumnUa(!isHideColumnUa);
   const toggleHideColumnEn = () => setIsHideColumnEn(!isHideColumnEn);
-
   const { register, handleSubmit, reset } = useForm();
 
-  const toggleActiveItem = (name: string) => {
-    if(name === activeDictionary) {
-      setActiveDictionary(mockData[0]);
+  interface DictionaryPart {name: string, words: {en: string, ua: string}}
+
+  const toggleActiveItem = (dictionary: DictionaryPart) => {
+    if(dictionary.name === activeDictionary) {
+      return
     } else {
-      setActiveDictionary(name);
+      setActiveDictionary(dictionary);
     }
   }
 

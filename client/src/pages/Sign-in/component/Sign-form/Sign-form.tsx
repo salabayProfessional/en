@@ -48,9 +48,9 @@ const SignForm: React.FC = () => {
       {/* <FormGroup tag="fieldset" row>
         <legend className="col-form-label col-sm-2">Radio Buttons</legend>
       </FormGroup> */}
-      <FormGroup row>
-        <Col>
-          <button type="submit" className="btn btn-success">Submit</button>
+      <FormGroup>
+        <Col sm={10}>
+          <button type="submit" className="btn btn-success btn-100">Submit</button>
         </Col>
       </FormGroup>
     </>

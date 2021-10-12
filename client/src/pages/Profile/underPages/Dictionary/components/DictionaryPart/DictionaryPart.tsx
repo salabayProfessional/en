@@ -1,5 +1,6 @@
 import React from 'react';
 import { Table } from 'reactstrap';
+import { generateString } from '../../../../../../specialFunction/specialFunction';
 
 const DictionaryPart: React.FC<any> = ({
   activeDictionary, 
@@ -9,7 +10,7 @@ const DictionaryPart: React.FC<any> = ({
 }) => {
 
   return (
-    <div className="table-dictionary-words-wrapper">
+    <>
       <Table className="table-dictionary-words">
         <thead>
           <tr>
@@ -23,10 +24,10 @@ const DictionaryPart: React.FC<any> = ({
           { 
               activeDictionary?.words.map((word: any, idx: number) => {
                 return (
-                  <tr key={`${word.en}`}>
+                  <tr key={generateString()}>
                     <th scope="row">{ idx }</th>
-                    {!isHideColumnEn? <td>{ word.en }</td> : <td className="words-column"></td>}
-                    {!isHideColumnUa? <td>{ word.ua }</td> : <td className="words-column"></td>}
+                    {!isHideColumnEn? <td className="words-column">{ word.en }</td> : <td className="words-column"></td>}
+                    {!isHideColumnUa? <td className="words-column">{ word.ua }</td> : <td className="words-column"></td>}
                     <td><input defaultValue="" {...register(`answers${word.en}`)} /></td>
                   </tr>
                 )
@@ -35,7 +36,7 @@ const DictionaryPart: React.FC<any> = ({
         </tbody>
       </Table>
       <button className="btn btn-outline-success btn-100">EDIT THE DICTIONARY</button>
-    </div>
+    </>
   )
 };
 

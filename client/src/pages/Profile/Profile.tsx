@@ -1,5 +1,4 @@
-import React, { useEffect } from 'react';
-import { useHistory, useLocation } from 'react-router';
+import React from 'react';
 import Tabs from '../../component/tabs/tabs';
 import "./Profile.scss";
 

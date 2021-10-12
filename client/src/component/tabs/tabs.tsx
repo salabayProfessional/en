@@ -1,4 +1,4 @@
-import React, { Suspense, useState } from 'react';
+import React, { Suspense } from 'react';
 import { TabContent, TabPane, Nav, NavItem, NavLink, Row, Col } from 'reactstrap';
 import classnames from 'classnames';
 import { useHistory, useLocation } from 'react-router';
@@ -6,15 +6,13 @@ import Setting from '../../pages/Profile/underPages/setting/Setting';
 import Dictionary from '../../pages/Profile/underPages/Dictionary/Dictionary';
 import Results from '../../pages/Profile/underPages/Results/Results';
 import AllTest from '../../pages/Profile/underPages/All-test/All-test';
+import './tabs.scss';
+
 const CreateTest = React.lazy(() => import('../../pages/Profile/underPages/Create-test/Cteate-test'));
 
 const Tabs: React.FC = () => {
-  const [activeTab, setActiveTab] = useState('');
   const history = useHistory();
   const location = useLocation();
-  const toggle = (tab: any) => {
-    if(activeTab !== tab) setActiveTab(tab);
-  };
 
   return (
     <div className="tabs-border">
@@ -42,7 +40,7 @@ const Tabs: React.FC = () => {
       <NavItem>
         <NavLink
           className={classnames({ active: location.pathname === "/profile/results" })}
-          onClick={() => { 
+          onClick={() => {
             history.push("/profile/results");
            }}
         >
@@ -70,7 +68,7 @@ const Tabs: React.FC = () => {
         </NavLink>
       </NavItem>
       </Nav>
-      <TabContent activeTab={activeTab}>
+      <TabContent activeTab={location.pathname}>
         <TabPane tabId="/profile/setting">
           <Row>
             <Col sm="12">

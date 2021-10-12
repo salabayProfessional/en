@@ -14,7 +14,7 @@ const App: React.FC = () => {
       <Router>
         <Header />
         <Switch>
-          <div className="container">
+          <div className="container col-md-12 col-lg-9">
             <Route path="/main" exact component={Main}/>
             <Route path="/sign-in" exact component={SignIn}/>
             <Route path="/story" exact component={Story}/>

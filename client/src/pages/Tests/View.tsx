@@ -12,26 +12,25 @@ const View: React.FC<ViewProps> = ({
   options, 
   randomWords,
 }) => {
-  
+	const word = options.type === "en-ua"? test.words[randomWords[count]].en : test.words[randomWords[count]].ua
+
 	return (
 		<div className="test bg-dark">
-			<div className="test-view">
+			<div className="test__content">
 				<button type="button" className="btn btn-outline-success btn-lg" onClick={() => toggleOptions()} disabled={start}>OPTIONS</button>     
 				<div>
 					<div className="form-group">
-							{start && 
+							{
+								start && 
 								<div className="pass-panel">
 									<div className="top-part">
 										<h1 className="title">test name: {test.name}</h1>
-										<p className="under-title">type: EN _ UA</p>
+										<h4 className="under-title">type: EN _ UA</h4>
+										<h5 className="under-title">{count}</h5>
 									</div>
-									<h2 className="title title_bottom_border">
-										{
-											start? 
-											test.words[randomWords[count]].en : 
-											test.words[randomWords[count]].ua 
-										}
-									</h2>
+
+									<h2 className="title title_bottom_border">{ word }</h2>
+
 									<Field className="form-control-lg btn-lg"
 										name="answer" 
 										type="text" 

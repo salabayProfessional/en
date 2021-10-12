@@ -26,10 +26,10 @@ const AllTest: React.FC = () => {
     return (
       <div className="test__item" key={generateString()}>
         <h3 className="title">{test.name}</h3>
-        <Button className="btn btn-danger btn-center" type="button" onClick={() => {
+        <Button className="btn btn-success btn-center btn-100" type="button" onClick={() => {
           setInfoId(test.name);
           toggleIsInfoModal();
-        }}>Kva Kva!</Button>
+        }}>Show</Button>
       </div>
     )
   })
@@ -42,7 +42,7 @@ const AllTest: React.FC = () => {
         isModal={isModal} 
       />
       <div className="All-test">
-        <h1>All tests</h1>
+        <h1 className="title">All tests</h1>
         <div className="All-test__inner">
           { list }
         </div>

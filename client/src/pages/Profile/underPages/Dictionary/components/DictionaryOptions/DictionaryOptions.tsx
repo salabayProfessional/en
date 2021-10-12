@@ -1,5 +1,6 @@
 import React from 'react';
 import { Table } from 'reactstrap';
+import { generateString } from '../../../../../../specialFunction/specialFunction';
 import { mockData } from '../../mockData';
 
 const DictionaryOptions: React.FC<any> = ({
@@ -16,7 +17,7 @@ const DictionaryOptions: React.FC<any> = ({
   const tableSettingList = mockData.map((item: any) => {
     return (
       <>
-        <tbody onClick={() => toggleActiveItem(item)} key={item.name}>
+        <tbody onClick={() => toggleActiveItem(item)} key={generateString()}>
           <tr>
             <th scope="row">
               {item.name}
