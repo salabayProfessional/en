@@ -1,7 +1,8 @@
-import { Field, Formik, Form } from 'formik';
 import React from 'react';
+import { Field, Formik, Form } from 'formik';
 import { useDispatch } from 'react-redux';
 import optionsData from '../../mockData/options';
+import { generateString } from '../../specialFunction/specialFunction';
 import { set_options } from '../../store/slices/optionsReducer';
 import './Options.scss';
 
@@ -28,22 +29,22 @@ const Options: React.FC = () => {
         return (
           <Form>
             <div className="options bg-dark">    
-              <div className="options__inner">
+              <div className="options__content">
                 <h1 className="title">OPTIONS</h1>
                 <div className="options__list">
                   {
-                    optionsData.map((item, idx) => {
+                    optionsData.map((item) => {
                       const { title } = item;
                       return (
-                        <li key={`options-item-${idx}`}>     
-                          <h3>{title}</h3>
-                          <div className="group__checkbox">
-                            {item.options.map((o: any, id: number) => {
+                        <li key={generateString()}>     
+                          <div className="group-type__options">
+                            <h3>{title}</h3>
+                            {item.options.map((option: string | number,) => {
                               return (
-                                <div className="option__checkbox" key={"group__checkbox" + id}>
-                                  <div>{o}</div>
-                                  <div className={`input-checkbox ${o === values[title]? "active" : ""}`} />
-                                  <Field name={item.title} value={o} type="radio" className="filed-checkbox" />
+                                <div className="group-type__options__content" key={generateString()}>
+                                  <div>{option}</div>
+                                  <div className={`input-checkbox ${option === values[title] && "active"}`} />
+                                  <Field name={title} value={option} type="radio" className="filed-checkbox" />
                                 </div>
                               )
                             })}
@@ -54,7 +55,6 @@ const Options: React.FC = () => {
                   } 
                 </div>
               </div>
-              
               <button type="submit" className="btn btn-outline-success btn-apply">APPLY</button>
             </div>
           </Form>

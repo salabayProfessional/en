@@ -1,10 +1,8 @@
 .dictionary-page {
   display: flex;
-  max-height: 680px;
 
   .dictionary-words {
     width: 100%;
-    max-height: 680px;
     overflow-y: scroll;
   }
   
@@ -13,14 +11,12 @@
     height: 100%;
   }
 }
-.table-dictionary-words-wrapper {
-  border-left: 1px solid white;
-  border-right: 1px solid white;
-  padding: 10px;
-}
 
 .table-dictionary-words {
   margin-top: 20px;
+  padding: 10px;
+  border-left: 1px solid white;
+  border-right: 1px solid white;
   padding: 10px;
 }
 
@@ -35,7 +31,7 @@
 }
 
 .top-10 {
-  margin-top: 10;
+  margin-top: 10px;
 }
 
 .words-columns {

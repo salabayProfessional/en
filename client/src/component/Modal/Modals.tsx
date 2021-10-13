@@ -181,9 +181,10 @@ const ModalResult: React.FC<{
             </tbody>
           </Table>
           <div className="bottom-panel"> 
-            <div className="bottom-panel__left col-6">
-              <div>type: en-ua</div>
-              <div>true: {result?.result.length}</div>
+            <div className="bottom-panel__left col-12">
+              <div className="col">type: en-ua</div>
+              <div className="col">true: {result?.result.length}</div>
+              <div className="col">timer: 60</div>
             </div>
           </div>
         </ModalHeader>

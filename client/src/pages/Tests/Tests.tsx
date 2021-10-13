@@ -34,7 +34,7 @@ const Test: React.FC = () => {
   const [start, setStart] = useState(false);
   const [isOptions, setIsOptions] = useState(false);
   const [seeResults, setSeeResults] = useState(false);
-  const [random, setRandom] = useState([1,2,3,4,5,6,7,8,9,0]);
+  const [random, setRandom] = useState([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]);
 
   interface I {
     answer: any,
@@ -70,7 +70,6 @@ const Test: React.FC = () => {
     if(!gotTest) {
       setTest(makeTest(options.words));
     }else {
-      console.log(gotTest);
       setTest(gotTest);
     };
     setStart(true);
@@ -105,15 +104,17 @@ const Test: React.FC = () => {
                 randomWords={random}
               >
                 {
-                  count === options.words - 1?
-                  <button 
-                    type="submit" 
-                    className={GenerallyClass}
+                  count === options.words - 1 && (
+                    <button 
+                      type="submit" 
+                      className={GenerallyClass}
                     >
                       END the test
-                  </button>
-                  :
-                  start && 
+                    </button>
+                  )
+                } 
+                { 
+                  count !== options.words && (
                   <button 
                     type="button" 
                     className={GenerallyClass}
@@ -121,6 +122,7 @@ const Test: React.FC = () => {
                   >
                     Send answer
                   </button>
+                  )
                 }
                 {
                   !start &&

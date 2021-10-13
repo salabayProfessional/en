@@ -6,16 +6,15 @@
   text-align: center;
 }
 
+.under-title {
+  text-align: center;
+  color: rgb(209, 209, 209);
+}
+
 .error {
   color: red;
 }
 
 .top {
   margin-top: 25px;
-}
-
-@media only screen and (max-width: 768px) {
-  .container {
-    width: 100%;
-  }
 }
