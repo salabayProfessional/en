@@ -113,7 +113,7 @@ const Test: React.FC = () => {
                     </button>
                   )
                 } 
-                {
+                { 
                   count !== options.words && (
                   <button 
                     type="button" 
