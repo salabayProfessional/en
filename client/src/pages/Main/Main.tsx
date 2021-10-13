@@ -4,8 +4,8 @@ import "./Main.scss";
 const Main: React.FC = () => {
 
   return (
-    <div className="main-page bg-dark">
-
+    <div className="page">
+      
     </div>
   )
 };

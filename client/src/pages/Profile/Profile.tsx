@@ -4,7 +4,7 @@ import "./Profile.scss";
 
 const Profile: React.FC = () => {
   return (
-    <div className="profile bg-dark">
+    <div className="page">
       <Tabs />
     </div>
   )

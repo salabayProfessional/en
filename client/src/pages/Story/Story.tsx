@@ -3,7 +3,7 @@ import "./Story.scss";
 
 const Story: React.FC = () => {
   return (
-    <div className="story bg-dark">
+    <div className="page">
       <h1>Story</h1>
     </div>
   )

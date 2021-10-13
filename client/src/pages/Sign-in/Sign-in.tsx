@@ -38,7 +38,7 @@ const SignIn: React.FC = () => {
   });
 
   return (
-    <div className="sign-in bg-dark">
+    <div className="page">
       <Formik 
         initialValues={initialValues}
         validationSchema={schema}

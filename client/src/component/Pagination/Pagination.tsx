@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 
 const Pagination: React.FC<{setNextRes: any , nextRes?: any, list: number}> = ({
   setNextRes,
-  nextRes,
   list,
 }) => {
   const [active, setActive] = useState(0);
@@ -17,7 +16,7 @@ const Pagination: React.FC<{setNextRes: any , nextRes?: any, list: number}> = ({
         setActive(i);
         setNextRes(i * 12);
       }}>
-        <a className="page-link" href="#">{i}</a>
+        <span className="page-link">{i}</span>
       </li>
     ))
   }
@@ -25,13 +24,13 @@ const Pagination: React.FC<{setNextRes: any , nextRes?: any, list: number}> = ({
   return (
     <ul className="pagination">
       <li className="page-item">
-        <a className="page-link" href="#">&laquo;</a>
+        <span className="page-link">&laquo;</span>
       </li>
       {
         listPagination
       }
       <li className="page-item">
-        <a className="page-link" href="#">&raquo;</a>
+        <span className="page-link">&raquo;</span>
       </li>
     </ul>
   )
