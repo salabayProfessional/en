@@ -12,7 +12,8 @@ const View: React.FC<ViewProps> = ({
   options, 
   randomWords,
 }) => {
-	const word = options.type === "en-ua"? test.words[randomWords[count]].en : test.words[randomWords[count]].ua
+
+	const word = start? options.type === "en-ua"? test.words[randomWords[count]].en : test.words[randomWords[count]].ua : "";
 
 	return (
 		<div className="test bg-dark">
@@ -24,7 +25,7 @@ const View: React.FC<ViewProps> = ({
 								start && 
 								<div className="pass-panel">
 									<div className="top-part">
-										<h1 className="title">test name: {test.name}</h1>
+										<h1 className="title">test name: {test?.name}</h1>
 										<h4 className="under-title">type: EN _ UA</h4>
 										<h5 className="under-title">{count}</h5>
 									</div>
@@ -39,7 +40,7 @@ const View: React.FC<ViewProps> = ({
 									/>
 								</div>
 							}
-						<div>{ children }</div>
+						<div className="ch">{ children }</div>
 					</div>
 				</div>
 			</div>
