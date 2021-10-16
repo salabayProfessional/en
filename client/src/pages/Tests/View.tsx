@@ -2,7 +2,7 @@ import React from 'react';
 import {Field} from 'formik';
 import { ViewProps } from './types';
 import './Tests.scss';
-const successBTN = "btn btn-outline-success btn-lg";
+import { BTN_BG, INP_BG} from '../../classes';
 
 const View: React.FC<ViewProps> = ({
   test, 
@@ -21,23 +21,22 @@ const View: React.FC<ViewProps> = ({
 
 	return (
 		<>   
+			<div className="header">
+				<button 
+					type="button" 
+					className={BTN_BG}
+					onClick={toggleOptions} 
+					disabled={start}
+				>
+					OPTIONS
+				</button> 
+			</div>
 
-		<div className="test__content-header">
-			<button 
-				type="button" 
-				className="btn btn-outline-success btn-lg" 
-				onClick={toggleOptions} 
-				disabled={start}
-			>
-				OPTIONS
-			</button> 
-		</div>
-
-			<div className="test__content-main">
+			<div className="content">
 				{
 					start && (
-						<div className="info-pass-panel">
-							<div className="top-part">
+						<div className="content__info">
+							<div className="content__info-inner">
 								<h1 className="title">test name: {test?.name}</h1>
 								<h4 className="under-title">type: EN _ UA</h4>
 								<h5 className="under-title">{count}</h5>
@@ -47,50 +46,50 @@ const View: React.FC<ViewProps> = ({
 						</div>
 					)
 				}
+			</div>
 
-				<div className="btn-group">
-					{
-						start && (
-							<Field className="form-control-lg btn-lg"
-								name="answer" 
-								type="text" 
-								placeholder="YOUR ANSWER" 
-								id="inputLarge" 
-							/>
-						)
-					}
-					{
-						count === options.words - 1 && (
-							<button 
-								type="submit" 
-								className={successBTN}
-							>
-								END the test
-							</button>
-						)
-					} 
-					{ 
-						count !== options.words && (
+			<div className="bottom-panel">
+				{
+					start && (
+						<Field className={INP_BG}
+							name="answer" 
+							type="text" 
+							placeholder="YOUR ANSWER" 
+							id="inputLarge" 
+						/>
+					)
+				}
+				{
+					count === options.words - 1 && (
 						<button 
-							type="button" 
-							className={successBTN}
-							onClick={() => sendAnswer(setFieldValue, values)}
+							type="submit" 
+							className={BTN_BG}
 						>
-							Send answer
+							END the test
 						</button>
-						)
-					}
-					{
-						!start && (
-							<button 
-								type="button"
-								className={successBTN}
-								onClick={() => startTest()}>
-								START
-							</button>
-						)
-					}
-				</div>
+					)
+				} 
+				{ 
+					start && count !== options.words && (
+					<button 
+						type="button" 
+						className={BTN_BG}
+						onClick={() => sendAnswer(setFieldValue, values)}
+					>
+						Send answer
+					</button>
+					)
+				}
+				{
+					!start && (
+						<button 
+							type="button"
+							className={BTN_BG}
+							onClick={() => startTest()}>
+							START
+						</button>
+					)
+				}
 			</div>
 		</>
 	)

@@ -4,7 +4,7 @@ import Main from '../../pages/Main/Main';
 import Profile from '../../pages/Profile/Profile';
 import SignIn from '../../pages/Sign-in/Sign-in';
 import Tests from '../../pages/Tests/Tests';
-import Header from '../header/header';
+import HeaderX from '../header/headerX';
 import "./app.scss";
 import Story from '../../pages/Story/Story';
 import { Container } from 'reactstrap';
@@ -13,9 +13,9 @@ const App: React.FC = () => {
 
   return (
       <Router>
-        <Header />
+        <HeaderX />
         <Switch>
-          <Container>
+          <Container fluid>
             <Route path="/main" exact component={Main}/>
             <Route path="/sign-in" exact component={SignIn}/>
             <Route path="/story" exact component={Story}/>

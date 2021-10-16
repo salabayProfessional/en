@@ -1,9 +1,9 @@
 .options {
   height: 90%;
-  max-width: 380px;
   position: fixed;
   z-index: 100;
-  right: 12%;
+  right: 0%;
+  top: 75px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -54,7 +54,7 @@
   
   & .input-checkbox {
     position: absolute;
-    border: 1px solid black;
+    border: 1px solid rgb(0, 0, 0);
     width: 16px;
     height: 16px;
     border-radius: 5px;
@@ -73,7 +73,7 @@
     content: "";
     width: 10px;
     height: 10px;
-    background: rgba(0, 0, 0, 0.849);
+    background: #000000;
     border-radius: 50%;
     position: absolute;
     margin-left: -5px;
@@ -81,6 +81,6 @@
   }
   
   & .active {
-    background: rgb(51, 255, 0);
+    background: #00e490;
   } 
 }

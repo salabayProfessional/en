@@ -28,7 +28,7 @@ const Options: React.FC = () => {
       {({values}: any) => {
         return (
           <Form>
-            <div className="options bg-dark">    
+            <div className="options col-3 bg-light">    
               <div className="options__content">
                 <h1 className="title">OPTIONS</h1>
                 <div className="options__content__list">

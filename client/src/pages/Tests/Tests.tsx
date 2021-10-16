@@ -8,7 +8,6 @@ import Options from '../../component/Options/Options';
 import { ModalNotice } from '../../component/Modal/Modals';
 import View from './View';
 import Timer from '../../component/Timer/Timer';
-import TasksPanel from "./components/Tasks-panel/Tasks-panel";
 import { RootReducer } from '../../store/slices/types';
 import { InitialValues } from './types';
 
@@ -77,7 +76,6 @@ const Test: React.FC = () => {
     <div className="page">
       { start && <Timer timer={60} /> }
       { isOptions && <Options /> }
-      { !start && <TasksPanel /> }
 
       <ModalNotice isModal={seeResults} toggle={() => setSeeResults(!seeResults)}/>
 
@@ -87,7 +85,8 @@ const Test: React.FC = () => {
       >
         {({values, setFieldValue}) => {
           return (
-            <Form className="test__content">
+            <Form className="pass-test">
+              <div className="pass-test__inner col-12 col-lg-6">
               <View
                 test={test} 
                 count={count} 
@@ -101,6 +100,7 @@ const Test: React.FC = () => {
                 startTest={startTest}
                 sendAnswer={sendAnswer}
               />
+              </div>
             </Form>
           )
         }}

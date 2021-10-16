@@ -29,7 +29,6 @@ const ChangesSetting: React.FC = () => {
       <div className="set-photo col-6">
         <FormGroup>
           <img alt="" src={avatar} className="avatar col-6" id="my_photo" />
-          <Label>Change Image</Label>
           {/* <input type="file" className="btn btn-outline-success btn-100" accept="image/*" ref={ref} onChange={(e: any) => {}}/> */}
           <Button type="button" className="btn btn-success btn-100">Change email</Button>
         </FormGroup>
