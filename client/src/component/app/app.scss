@@ -1,9 +1,34 @@
-.container {
-  padding-top: 65px;
+html, body {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+#root {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.container-fluid {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
 }
 
 .title {
   text-align: center;
+}
+
+.page {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  padding-top: 100px;
 }
 
 .under-title {
@@ -17,4 +42,33 @@
 
 .top {
   margin-top: 25px;
+}
+
+.start-title {
+  text-align: start;
+}
+
+.padding-10 {
+  padding: 10px;
+}
+
+.btn-bg {
+  width: 100%;
+  margin-top: 10px;
+}
+
+@media (max-width: 400px) {
+  .btn-bg {
+    width: 100%;
+  }
+}
+
+.custom-input {
+  opacity: 0;
+  z-index: 10;
+}
+
+.col .col-sm .col-sm-12 {
+  padding-right: 0;
+  padding-left: 0;
 }

@@ -1,47 +1,46 @@
 .options {
-  min-height: 724px;
-  max-width: 350px;
+  height: 90%;
   position: fixed;
   z-index: 100;
-  right: 165px;
-  overflow: auto;
+  right: 0%;
+  top: 75px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 
   & .options__content {
     border-bottom: 1px solid white;
-    min-height: 600px;
-  }
+    min-height: 80%;
 
-  & .options__list {
-    margin-top: 20px;
-    box-sizing: border-box;
-    width: 350px;
-    list-style: none;
+    & .options__content__list {
+      margin-top: 20px;
+      box-sizing: border-box;
+      max-width: 380px;
+      list-style: none;
+    }
+
   }
   
   & .group-type__options {
-    margin-top: 50px;
+    margin-top: 15%;
     text-align: center;
-    justify-content: space-between;
     display: flex;
-    flex-wrap: wrap;
-  }
-  
-  & .group-type__options__content {
-    margin-left: 20px;
     flex-direction: column;
-    position: relative;
-    width: 16px;
+
+    & .group-type__option-content {
+      display: flex;
+
+      & .group-type__option-content-inner {
+        margin-left: 20px;
+        position: relative;
+        flex-direction: column;
+        width: 16px;
+      }
+    }
   }
   
   & .btn-apply {
-    width: 60%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 0;
+    width: 100%;
   }
 
   & .filed-checkbox {
@@ -55,7 +54,7 @@
   
   & .input-checkbox {
     position: absolute;
-    border: 1px solid black;
+    border: 1px solid rgb(0, 0, 0);
     width: 16px;
     height: 16px;
     border-radius: 5px;
@@ -74,7 +73,7 @@
     content: "";
     width: 10px;
     height: 10px;
-    background: rgba(0, 0, 0, 0.849);
+    background: #000000;
     border-radius: 50%;
     position: absolute;
     margin-left: -5px;
@@ -82,6 +81,6 @@
   }
   
   & .active {
-    background: rgb(51, 255, 0);
+    background: #00e490;
   } 
 }

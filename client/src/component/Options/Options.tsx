@@ -28,30 +28,29 @@ const Options: React.FC = () => {
       {({values}: any) => {
         return (
           <Form>
-            <div className="options bg-dark">    
+            <div className="options col-3 bg-light">    
               <div className="options__content">
                 <h1 className="title">OPTIONS</h1>
-                <div className="options__list">
-                  {
-                    optionsData.map((item) => {
-                      const { title } = item;
-                      return (
-                        <li key={generateString()}>     
-                          <div className="group-type__options">
-                            <h3>{title}</h3>
-                            {item.options.map((option: string | number,) => {
-                              return (
-                                <div className="group-type__options__content" key={generateString()}>
+                <div className="options__content__list">
+                  { 
+                    optionsData.map((item) => (
+                      <li key={generateString()}>     
+                        <div className="group-type__options">
+                          <h3 className="start-title">{item.title}</h3>
+                          <div className="group-type__option-content">
+                            {
+                              item.options.map((option: string | number) => (
+                                <div className="group-type__option-content-inner" key={generateString()}>
                                   <div>{option}</div>
-                                  <div className={`input-checkbox ${option === values[title] && "active"}`} />
-                                  <Field name={title} value={option} type="radio" className="filed-checkbox" />
+                                  <div className={`input-checkbox ${option === values[item.title] && "active"}`} />
+                                  <Field name={item.title} value={option} type="radio" className="filed-checkbox" />
                                 </div>
-                              )
-                            })}
+                              ))
+                            }
                           </div>
-                        </li>
-                      )
-                    })
+                        </div>
+                      </li>
+                    ))
                   } 
                 </div>
               </div>

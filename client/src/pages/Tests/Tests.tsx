@@ -7,12 +7,9 @@ import { reset_test } from "../../store/slices/testsReducer";
 import Options from '../../component/Options/Options';
 import { ModalNotice } from '../../component/Modal/Modals';
 import View from './View';
-import './Tests.scss';
 import Timer from '../../component/Timer/Timer';
-import TasksPanel from "./components/Tasks-panel/Tasks-panel";
 import { RootReducer } from '../../store/slices/types';
-
-const GenerallyClass = "btn btn-outline-success btn-lg";
+import { InitialValues } from './types';
 
 const makeRandomArr = (arr: any) => {
   let randomArr = []; 
@@ -36,12 +33,7 @@ const Test: React.FC = () => {
   const [seeResults, setSeeResults] = useState(false);
   const [random, setRandom] = useState([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]);
 
-  interface I {
-    answer: any,
-    answers: any,
-  };
-
-  const initialValues: I = {
+  const initialValues: InitialValues = {
     answer: '',
     answers: [],
   };
@@ -81,10 +73,10 @@ const Test: React.FC = () => {
   };
 
   return (
-    <>
+    <div className="page">
       { start && <Timer timer={60} /> }
       { isOptions && <Options /> }
-      { !start && <TasksPanel /> }
+
       <ModalNotice isModal={seeResults} toggle={() => setSeeResults(!seeResults)}/>
 
       <Formik 
@@ -93,7 +85,8 @@ const Test: React.FC = () => {
       >
         {({values, setFieldValue}) => {
           return (
-            <Form>
+            <Form className="pass-test">
+              <div className="pass-test__inner col-12 col-lg-6">
               <View
                 test={test} 
                 count={count} 
@@ -102,43 +95,17 @@ const Test: React.FC = () => {
                 toggleOptions={toggleOptions}
                 options={options}
                 randomWords={random}
-              >
-                {
-                  count === options.words - 1 && (
-                    <button 
-                      type="submit" 
-                      className={GenerallyClass}
-                    >
-                      END the test
-                    </button>
-                  )
-                } 
-                { 
-                  count !== options.words && (
-                  <button 
-                    type="button" 
-                    className={GenerallyClass}
-                    onClick={() => sendAnswer(setFieldValue, values)}
-                  >
-                    Send answer
-                  </button>
-                  )
-                }
-                {
-                  !start &&
-                  <button 
-                    type="button"
-                    className={GenerallyClass}
-                    onClick={() => startTest()}>
-                    START
-                  </button>
-                }
-              </View>
+                values={values}
+                setFieldValue={setFieldValue}
+                startTest={startTest}
+                sendAnswer={sendAnswer}
+              />
+              </div>
             </Form>
           )
         }}
       </Formik>
-    </>
+    </div>
   )
 };
 

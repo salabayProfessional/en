@@ -2,6 +2,8 @@ import { Field, Formik, Form } from 'formik';
 import React, { useMemo } from 'react';
 import { useDispatch } from 'react-redux';
 import { Button, FormGroup, Label, Table } from 'reactstrap';
+import { INP_BG } from '../../../../classes';
+import Row from '../../../../component/Row/Row';
 import { allWords } from '../../../../mockData/words';
 import { generateString } from '../../../../specialFunction/specialFunction';
 import { create_test } from '../../../../store/slices/testsReducer';
@@ -64,8 +66,9 @@ const CreateTest: React.FC = () => {
                 <h2>Words selected: {values.selectedWords.length}</h2>
               </header>
               <div className="create-page">
-                <div className="left col-6">
-                  <div className="left-body">
+              <Row 
+                  Left={
+                   (
                     <div className="table-words">
                       <Table className="bg-dark">
                         <tbody>
@@ -75,63 +78,65 @@ const CreateTest: React.FC = () => {
                         </tbody>
                       </Table>
                     </div>
-                  </div>
-                </div>
-
-                <div className="right col-6">
-                  <div className="right-body">
-                    <FormGroup>
-                      <Label for="Name">Name</Label>
-                      <Field className="form-control" type="text" placeholder="name" name="name" id="Name" />
-                    </FormGroup>
-                    <FormGroup>
-                      <Label for="Type">Type</Label>
-                      <Field className="form-control" as="select" name="type" id="Type">
-                        <option>EN - UA</option>
-                        <option>UA - EN</option>
-                      </Field>
-                    </FormGroup>
-                    <FormGroup>
-                      <Label for="Amount">Amount</Label>
-                      <Field className="form-control" as="select" name="amount" id="Amount">
-                        <option>10</option>
-                        <option>15</option>
-                        <option>20</option>
-                        <option>25</option>
-                        <option>30</option>
-                      </Field>
-                    </FormGroup>
-                    <FormGroup>
-                      <Label for="Timer">Timer</Label>
-                      <Field className="form-control" as="select" name="timer" id="Timer">
-                        <option>30</option>
-                        <option>60</option>
-                        <option>90</option>
-                        <option>120</option>
-                        <option>150</option>
-                      </Field>
-                    </FormGroup>
-                  </div>
-                  <footer>
-                    <FormGroup>
-                      <Button 
-                        className="form-control" 
-                        color="success" 
-                        type="button" 
-                        onClick={() => {
-                          if(values.selectedWords.length !== values.amount) {
-                            return alert(`You need to select a ${values.amount}`)
-                          } else {
-                            alert("success");
-                            handleSubmit();
-                          }
-                      }}
-                      >
-                        CREATE
-                      </Button>
-                    </FormGroup>
-                  </footer>
-                </div>
+                   )
+                  }
+                  Right={
+                    (
+                      <div className="">
+                        <FormGroup>
+                          <Label for="Name">Name</Label>
+                          <Field className={INP_BG} type="text" placeholder="name" name="name" id="Name" />
+                        </FormGroup>
+                        <FormGroup>
+                          <Label for="Type">Type</Label>
+                          <Field className={INP_BG} as="select" name="type" id="Type">
+                            <option>EN - UA</option>
+                            <option>UA - EN</option>
+                          </Field>
+                        </FormGroup>
+                        <FormGroup>
+                          <Label for="Amount">Amount</Label>
+                          <Field className={INP_BG} as="select" name="amount" id="Amount">
+                            <option>10</option>
+                            <option>15</option>
+                            <option>20</option>
+                            <option>25</option>
+                            <option>30</option>
+                          </Field>
+                        </FormGroup>
+                        <FormGroup>
+                          <Label for="Timer">Timer</Label>
+                          <Field className={INP_BG} as="select" name="timer" id="Timer">
+                            <option>30</option>
+                            <option>60</option>
+                            <option>90</option>
+                            <option>120</option>
+                            <option>150</option>
+                          </Field>
+                        </FormGroup>
+                        <footer>
+                          <FormGroup>
+                            <Button 
+                              className="form-control btn-bg" 
+                              color="success" 
+                              type="button" 
+                              onClick={() => {
+                                if(values.selectedWords.length !== values.amount) {
+                                  return alert(`You need to select a ${values.amount}`)
+                                } else {
+                                  alert("success");
+                                  handleSubmit();
+                                }
+                            }}
+                            >
+                              CREATE
+                            </Button>
+                          </FormGroup>
+                        </footer>
+                      </div>
+                    )
+                  }
+                />
               </div>
             </Form>
           )
