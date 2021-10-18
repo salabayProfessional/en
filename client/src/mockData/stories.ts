@@ -41,4 +41,10 @@ export const stories = [
     date: "01.12.2021",
     id: 6
   },
+  {
+    title: "Project", 
+    author: "Salabay Oleg",
+    stories: "I was learning React & JS. I applied to IT company after that i went to interview, but i didn't pass it. Approximately i was shy and i had red face. And besides i didn't know English language and He told me learn English and good luck you. Then i arrived to home and decided to learn the english and so was not long because i must learn IT. but after time i understand that i can to create Website for english for yourself and this will be cool for EN and JS & React",
+    data: "09.17.2021"
+  }
 ]

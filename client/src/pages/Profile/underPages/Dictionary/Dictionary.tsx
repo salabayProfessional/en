@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { shuffle } from '../../../../specialFunction/specialFunction';
 import DictionaryOptions from './components/DictionaryOptions/DictionaryOptions';
-import DictionaryPart from './components/DictionaryPart/DictionaryPart';
+import TableWords from './components/DictionaryPart/DictionaryPart';
 import { mockData } from './mockData';
 import "./Dictionary.scss";
+import Row from '../../../../component/Row/Row';
 
 const Dictionary: React.FC = () => {
   const [isList, setIsList] = useState(false);
@@ -38,27 +39,34 @@ const Dictionary: React.FC = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="dictionary-page">
-      <div className="col-9">
-          <div className="dictionary-words__party">
-            <DictionaryPart 
-              activeDictionary={activeDictionary} 
-              register={register}
-              isHideColumnUa={isHideColumnUa}
-              isHideColumnEn={isHideColumnEn}
+    <form onSubmit={handleSubmit(onSubmit)}>
+      <div className="dictionary">
+        <Row 
+          Left={(
+            <div className="table-words">
+              <TableWords 
+                activeDictionary={activeDictionary} 
+                register={register}
+                isHideColumnUa={isHideColumnUa}
+                isHideColumnEn={isHideColumnEn}
+              />
+            </div>
+          )}
+
+          Right={(
+            <DictionaryOptions 
+                isList={isList}
+                activeDictionary={activeDictionary}
+                randomDictionaryWords={randomDictionaryWords}
+                toggleActiveItem={toggleActiveItem}
+                toggleList={toggleList}
+                reset={reset}
+                toggleHideColumnUa={toggleHideColumnUa}
+                toggleHideColumnEn={toggleHideColumnEn}
             />
-          </div>
-      </div>
-      <div className="col-3">
-        <DictionaryOptions 
-            isList={isList}
-            activeDictionary={activeDictionary}
-            randomDictionaryWords={randomDictionaryWords}
-            toggleActiveItem={toggleActiveItem}
-            toggleList={toggleList}
-            reset={reset}
-            toggleHideColumnUa={toggleHideColumnUa}
-            toggleHideColumnEn={toggleHideColumnEn}
+          )}
+          rightWidth={3}
+          leftWidth={9}
         />
       </div>
     </form>

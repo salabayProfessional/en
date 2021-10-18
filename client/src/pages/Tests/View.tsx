@@ -16,8 +16,13 @@ const View: React.FC<ViewProps> = ({
 	setFieldValue,
 	values,
 }) => {
-
 	const word = start? options.type === "en-ua"? test.words[randomWords[count]].en : test.words[randomWords[count]].ua : "";
+
+	const handleKeyDown = (event: any) => {
+    if (event.key === 'Enter') {
+      sendAnswer(setFieldValue, values);
+    }
+  };
 
 	return (
 		<>   
@@ -56,6 +61,7 @@ const View: React.FC<ViewProps> = ({
 							type="text" 
 							placeholder="YOUR ANSWER" 
 							id="inputLarge" 
+							onKeyDown={handleKeyDown}
 						/>
 					)
 				}

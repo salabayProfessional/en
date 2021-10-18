@@ -1,4 +1,5 @@
 import { combineReducers } from "redux";
+import auth from "./authReducer";
 import dictionaryReducer from "./dictionaryReducer";
 import optionsReducer from "./optionsReducer";
 import profileReducer from "./profileReducer";
@@ -13,6 +14,7 @@ const rootReducer = combineReducers({
   result: resultReducer,
   dictionary: dictionaryReducer,
   profile: profileReducer,
+  auth: auth,
 });
 
 export default rootReducer;

@@ -8,7 +8,7 @@ const Main: React.FC = () => {
     <div className="page">
       <Proposition />
     </div>
-  )
+  );
 };
 
 export default Main;

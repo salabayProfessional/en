@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import { useAuth } from '../../hooks/useAuth';
 import MobileMenu from '../MobileMenu/MobileMenu';
 import './header.scss';
 
 const LinkList = () => {
+
+  const isAuth = useAuth();
+
   return (
     <div className="collapse navbar-collapse" id="navbarColor02">
       <ul className="navbar-nav me-auto">
@@ -59,21 +63,42 @@ const LinkList = () => {
           </NavLink>
         </li>
         <li className="nav-item">
-          <NavLink 
-            activeStyle={{
-              fontWeight: "bold",
-              color: "rgb(255, 255, 255)",
-              fontSize: "22px",
-            }} 
-            style={{
-              fontWeight: "bold",
-              color: "black",
-              textDecoration: "none"
-            }}
-            to="/sign-in"
-          >
-            sign-in
-          </NavLink>
+          {
+            isAuth? (
+              <NavLink 
+              activeStyle={{
+                fontWeight: "bold",
+                color: "rgb(255, 255, 255)",
+                fontSize: "22px",
+              }} 
+              style={{
+                fontWeight: "bold",
+                color: "black",
+                textDecoration: "none"
+              }}
+              to="/sign-in"
+            >
+              log-out
+            </NavLink>
+            ) :
+            (
+              <NavLink 
+              activeStyle={{
+                fontWeight: "bold",
+                color: "rgb(255, 255, 255)",
+                fontSize: "22px",
+              }} 
+              style={{
+                fontWeight: "bold",
+                color: "black",
+                textDecoration: "none"
+              }}
+              to="/sign-in"
+            >
+              sign-in
+            </NavLink>
+            )
+          }
         </li>
         <li className="nav-item">
           <NavLink 
@@ -91,16 +116,6 @@ const LinkList = () => {
           >
             profile
           </NavLink>
-        </li>
-        <li className="nav-item dropdown">
-          <a className="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-          <div className="dropdown-menu">
-            <a className="dropdown-item" href="#">Action</a>
-            <a className="dropdown-item" href="#">Another action</a>
-            <a className="dropdown-item" href="#">Something else here</a>
-            <div className="dropdown-divider"></div>
-            <a className="dropdown-item" href="#">Separated link</a>
-          </div>
         </li>
       </ul>
     </div>
@@ -138,7 +153,7 @@ const HeaderX: React.FC = () => {
           </form> */}
           <LinkList />
         </div>
-          <MobileMenu show={isMobileMenu} />
+          <MobileMenu show={isMobileMenu} setIsMobileMenu={setIsMobileMenu}/>
     </nav>
   )
 };

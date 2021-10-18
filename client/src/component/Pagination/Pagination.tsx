@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import './Pagination'
 const Pagination: React.FC<{setNextRes: any , nextRes?: any, list: number}> = ({
   setNextRes,
   list,

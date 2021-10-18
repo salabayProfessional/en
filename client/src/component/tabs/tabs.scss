@@ -1,3 +1,12 @@
 .tabs-border {
   border-bottom: 1px solid #002b36;
 }
+
+.nav-mobile {
+  @media (max-width: 400px) {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    overflow-x: auto;
+  }
+}

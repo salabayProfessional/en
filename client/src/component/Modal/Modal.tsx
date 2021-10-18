@@ -29,7 +29,7 @@ const CornModal: React.FC<CornModalTypes> = ({
 
   return (
     <div>
-      <Modal isOpen={isModal} toggle={toggle}>
+      <Modal isOpen={isModal} toggle={toggle} className="col-12 col-lg-6 corn-modal">
         {
           isBody && (
           <ModalBody>

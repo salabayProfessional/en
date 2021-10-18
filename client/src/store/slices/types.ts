@@ -58,6 +58,11 @@ export interface ProfileReducer {
 
 };
 
+export interface AuthReducer {
+  authentication: boolean,
+  role: "admin" | "free" | "super" | "expert"
+}
+
 export interface RootReducer {
   tests: TestsReducer,
   options: OptionsReducer,
@@ -65,4 +70,5 @@ export interface RootReducer {
   result: ResultReducer,
   dictionary: DictionaryReducer,
   profile: ProfileReducer,
+  auth: AuthReducer,
 };

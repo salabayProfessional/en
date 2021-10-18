@@ -4,9 +4,10 @@ import { useDispatch } from 'react-redux';
 import optionsData from '../../mockData/options';
 import { generateString } from '../../specialFunction/specialFunction';
 import { set_options } from '../../store/slices/optionsReducer';
+import { motion } from 'framer-motion';
 import './Options.scss';
 
-const Options: React.FC = () => {
+const Options: React.FC<{isOpen: boolean}> = ({isOpen}) => {
   const dispatch = useDispatch()
   
   const initialValues = {
@@ -20,6 +21,11 @@ const Options: React.FC = () => {
     dispatch(set_options(values));
   };
 
+  const variants = {
+    open: { opacity: 1, x: 0 },
+    closed: { opacity: 0, x: "100%" },
+  }
+
   return (
     <Formik 
       initialValues={initialValues} 
@@ -28,9 +34,13 @@ const Options: React.FC = () => {
       {({values}: any) => {
         return (
           <Form>
-            <div className="options col-3 bg-light">    
+            <motion.div 
+              animate={isOpen ? "open" : "closed"}
+              variants={variants}
+              transition={{duration: 0.7}}
+              className="options col-8 col-lg-3 bg-light"
+            >    
               <div className="options__content">
-                <h1 className="title">OPTIONS</h1>
                 <div className="options__content__list">
                   { 
                     optionsData.map((item) => (
@@ -55,7 +65,7 @@ const Options: React.FC = () => {
                 </div>
               </div>
               <button type="submit" className="btn btn-outline-success btn-apply">APPLY</button>
-            </div>
+            </motion.div>
           </Form>
         )
       }}
