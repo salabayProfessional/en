@@ -14,16 +14,16 @@ const auditTranslate = (
 ) => {
   const type =  options.translate === "en-ua" ? "en" : "ua";
   const words = test.words.map((word: any) => word[type].toLowerCase());
-  const sortAnswers = random.map((_, idx) => answers[random.findIndex((e) => e === idx) as any]);
+  const sortedAnswers = random.map((_, idx) => answers[random.findIndex((e) => e === idx) as any]);
 
-  const audit = words.filter((word: string, idx: number) => checkAnswer(word, sortAnswers[idx]));
+  const audit = words.filter((word: string, idx: number) => checkAnswer(word, sortedAnswers[idx]));
 
   return {
     name: test?.name? test.name : "random",
     type: options.type,
     words: test.words,
     result: audit,
-    answers: sortAnswers,
+    answers: sortedAnswers,
     options,
   };
 };
@@ -39,7 +39,7 @@ const createTest: any = (words: any) => (amount: number = 10) => {
   let result: any = {name: generateString(), words: []};
 
   for(let i = 0; i < amount ; i++) {
-      randomID.push(Math.floor(Math.random() * 555));
+    randomID.push(Math.floor(Math.random() * 490));
   };
 
   randomID.map((id: any) => result.words.push(words[id]));

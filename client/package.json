@@ -23,6 +23,7 @@
     "enzyme-to-json": "^3.6.2",
     "formik": "^2.2.9",
     "formik_typescript_ui": "^2.0.4",
+    "framer-motion": "^4.1.17",
     "git-flow": "^0.2.0",
     "node-sass": "^4.0.1",
     "normalize.css": "^8.0.1",

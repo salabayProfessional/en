@@ -41,7 +41,7 @@ const DictionaryOptions: React.FC<any> = ({
   return (
     <div className="dictionary-options">
       <div className="dictionary-options__party">
-        <input type="text" placeholder="filter" className="btn-100" />
+        <input type="text" placeholder="filter" className="form-control btn-bg" />
       </div>
       <div className="dictionary-options__party">
         <button className="btn btn-outline-success btn-100">Add new dictionary</button>

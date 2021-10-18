@@ -1,14 +1,27 @@
-.words-list {
-  height: 600px;
-  overflow-y: scroll;
+.corn-modal {
+  height: 60%;
+  margin-top: 8%;
+  z-index: 10000;
+}
+
+.table-words {
+  height: 500px;
+  overflow-x: scroll;
+
+  @media (max-width: 400px) {
+    height: 300px;
+    overflow-y: scroll;
+  }
 }
 
 .bottom-panel {
-  display: flex;
-  justify-content: space-between;
 
-  .bottom-panel__left {
+  .bottom-panel__inner {
     display: flex;
     justify-content: space-between;
+
+    .inline-block {
+      display: inline-block;
+    }
   }
 }

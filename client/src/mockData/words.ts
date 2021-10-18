@@ -1,1198 +1,509 @@
-const en = `
-Destroy;
-Adventure;	
-Predict;	
-Produce;	
-Complete;	
-Truly;
-Burst;	
-Supply;
-Instead;	
-Spare; 
-At once;
-Explode; 
-Literally;
-Spy;	
-Closer;	
-Stab;	
-Court; 
-Goal;	
-Worn; 
-Observe; 
-Impatient; 	
-Avidence; 
-Flare;	
-Blame;	
-Threat;	
-Trail;	
-Respect;	
-Fool;	
-Escape;
-Sake;	
-Reveal;
-Coward;
-Proud;
-Admit;
-Pure;	
-Coperate;	
-Eventually;	
-Solve;
-Envy;	
-Regret;
-Obviously;
-Apparently;
-Quilty;	
-Evil;	
-Rush;	
-Employ;	
-Dire;	
-Consequence;
-Spans;
-Able;
-Barely;
-Deliver;	
-Rely;
-Honey;
-Mock;
-Betray;	
-Get on; 
-Trust; 
-Steer;
-Demand;
-Cost; 
-Pleasure;
-Edit;
-Case;
-Template;
-Give up;
-Robber; 
-Suddenly;
-Separate;	 
-Dest;
-Primarily;
-Barely;
-trapp; 
-Shelter;
-Hang; 
-around;
-Surround;	
-Instant; 
-Lick;
-Chill out; 
-Sprain; 
-Exact; 
-To sum up;
-Stare at; 
-Advert; 
-Bumb; 
-into; 
-Get into; 
-Stuffy;
-Crave;
-Confuse;
-Elect; 
-Enforce; 
-Impress; 
-Struggle; 
-Compulsory; 
-Climb; 
-Cliff; 
-Base;
-Camp;
-Admire;
-Sight;
-Recover;
-Vomit; 
-Fever;
-Herbar;
-Dizzy; 
-Injection; 
-Busy;
-Dedicate;
-Prescribe;	
-Receive; 
-Invent; 
-Average;
-Aware; 
-Confuse;
-Daily;
-Shout;
-Tend;
-Lean;	
-Quilt;
-Wide;	
-Rude;
-Consider;	
-Faced;
-Permit;
-Occurs;
-Apply ;
-Hybrid;
-Assume;
-Aligned;
-Volume;
-Motion;
-Impact;
-Because Of Me;
-Actually;
-Inspect;	
-Enture;
-Impression;
-The same;
-Quite;
-Reject;
-Absent; 
-Occurs;
-Woolly;
-Hybrid;
-There for;
-Hence;	
-Indeed;
-Generally;
-Besides;	
-In spite of;
-As a rule;
-Freak;	
-Calm down;
-Never mina; 
-I mean;
-For real;
-Like what;
-Cheer;
-Get in; 
-Holds;
-On time;
-Scary;
-Fellow;	
-Gather;	
-Duties;	
-Vary;	
-Income;	
-Profit;	
-Decade;	
-Burnt;
-To note;
-Shape;
-Restock;
-Amount; 
-Extreme;
-Source;
-Conversation;
-Average;
-Obtain;
-Arrange;
-Blind;	
-Wage;	
-Rural;
-Goal;	
-Approach;
-Pull;
-Undo;
-Redo;
-Comit;
-Examine;
-Request;
-Ref;
-Consistent;	
-Bundle;
-Trial;
-Affirm;
-Such;
-Special;
-adjust;
-charm;
-merger;
-move;
-embody;
-baffled;
-don't worry;
-time has passed;
-press;
-produce;
-approve ;
-deploy;
-conversation;
-intersection;
-customize;
-reproduce;
-quickly;
-decition;
-anable;
-mention;
-metric;
-comper;
-regarding;
-becomes;
-publisher;
-immpresion;
-sentually;
-mock;
-difficult;
-generally;
-quickly; 
-decition;
-mention;
-compare;
-regarding; 
-becomes;
-publisher; 
-immpretion;
-mock;
-difficult;
-generally;
-imoleament;
-compale;
-simmilar;
-compatible;
-divide;
-relate;
-terrain;
-customizable;  
-enhancements;
-layer;
-horizon;
-fog;
-Invalid; 
-assignment;
-occur;
-toggle-baselayers;
-baselayer;
-referre;
-deprecate; 
-in favor;
-Internally;
-plainly;
-snippet;
-hit;
-repetitive;
-nullish;
-proposal; 
-toggler;
-posibility;
-impleament;
-doesn't;
-matter;
-generally;
-prefix;
-abvious;
-diff;
-represents;
-exposes;
-bearing;
-hash;
-fired;
-idle;
-pointing;
-rotate;
-fit; 
-bounds;
-terrain;
-repaint;
-handling;
-logger;
-Square;
-Discast;
-capture;
-recognize;
-execute;
-dispense;
-monetary;
-built in;
-record;
-broadcost;
-since;
-held;
-enrol;
-via;
-combine;
-carry out;
-signature;
-quit;
-protected;
-abstract;
-query;
-area;
-interest;
-received;
-coverage;
-parse;
-common;
-declare;
-aware;
-simplicity;
-required;
-variant;
-declare;
-consist;
-complex;
-observed;
-struggle;
-confusion;
-calls;
-Resources;
-courage;
-encourage;
-accessed;
-Blank;
-validation;
-edge;
-outside;
-boundary;
-beyond;
-almost;
-plane;
-untie;
-engagement;
-determine;
-communicate;
-unit;
-circuit;
-complex;
-performs;
-measure;
-therefore;
-consist;
-examine;
-what kind of; 
-argue;
-complain;
-disagree;
-meal;
-consequently;
-intend;
-consider;
-converse;
-point out;
-stroll;
-go back;
-shoulder;
-thrill;
-proposal;
-tender;
-blunt;
-movement;
-aaapproximately;
-go after me;
-maajor;
-whole time;
-i never meant;
-i figured;
-do we dare;
-apparently;
-rope;
-spare;
-supposed to be;
-you are gonna be fine;
-well actually;
-you take care;
-you are over me;
-basically
-when he did;
-ever;
-did it?;
-bring;
-we got to go;
-i am afraid it is;
-you deserve;
-deparment;
-at least;
-third;
-i am apposed;
-according;
-revenge;
-we got;
-what we do;
-what makes all the difference;
-horrible;
-terrible;
-taste;
-to buzz;
-buzz him in;
-he finnaly;
-to ask me;
-in other words;
-more;
-less;
-what you think is less important;
-confident;
-is there a defference between you and me?;
-self-help;
-availabel;
-inreality;
-to matter;
-where is the?;
-let is go to ;
-how much is this;
-hungry;
-what time is it;
-could be worse;
-could be better;
-in general! not bad;
-i was learnt;
-never better;
-what dows this word mean;
-that sound greate;
-that suks;
-hold on;
-lets have some;
-i down;
-queue;
-for shure!;
-i will you miss to;
-to be here on time;
-to inform you;
-this is nonsense;
-clearly;
-this is your fault;
-but you leave me no choice;
-you will regret this;
-you are a brave;
-those are actually;
-that comes from;
-it is pleasure;
-hopefully;
-introduction;
-i couldn't make;
-would you like to have some;
-that is nice;
-we will probably;
-i am just glad;
-it went really well;
-conclusion;
-this article;
-those;
-please call me;
-from my point of you;
-with regard to;
-my best guess;
-as far as i can see;
-besides;
-despite;
-based on;
-capable of;
-envious of;
-famous of;
-guilty of;
-keen on;
-opposed to;
-used to;
-well done;
-keep it up;
-that's better than ever;
-dont apologize;
-forget about it;
-miracle;
-passion;
-disire;
-in other words;
-however;
-on the country;
-after all;
-to date;
-assume;
-there is;
-gotta be;
-definitely;
-recently, i notice that;
-he is restrain;
-one of them;wake up;
-whatever;
-something stange;
-what is the benefit;
-refer;
-execute;
-communicated;
-consist;
-examine;
-what kind of;
-to aassume;
-i notice;
-to restrain;
-ordinary;
-underdog;
-to pick on;
-affection;
-if i were you;
-long time no see;
-greit to see you;
- i am not being funny;
-to be honest;
-i would love but;
-supposed you have;
-stab;
-with pleasure;
-deprecated;
-he is suspect that;
-we will probably;
-we gotta go;
-it looks desperat;
-incredible;
-you should not have gone;
-converge on;
-rarely;
-barely;
-i needed out;
-i guess anywhere;
-is that like;
-dont get me wrong;
-how come;
-long story short;
-did you ever thing that;
-i realized;
-i moved out;
-odd choice;
-it scare me;
-that is weird;
-in fact;
-expessially;
-i mention;
-i am impressed;
-appropriate;
-whole bunch;
-litteraly;
-i was sore the next day;
-advance;
-influence;
-separate;
-we'll;
-swept;
-nonverbal;
-actually;
-wanna;
-gonna;
-get away;
-to be into something;
-mess with fate;
-relationship;
-i am little uncomfortable with this anyway;
-some good ones;
-i'm desperate, basically;
-not in general;
-i realize that;
-you swing for the fence. hold on aa second, Albert;
-That’s good;
-how ridiculous this is;
-you know what it's like; 
-wrong;
-but at the same time;
-let's go paint that seiling;
-take it easy;
-On the one hand;
-i thought  to ask;
-passion for;
-respond;
-samples;
-we'll run the whole lot of them by you;
-let's go over this one more time;
-what is the objective;
-shock and awe; 
-awful;
-exactly;
-handle;
-to go over things;
-I going to  buy a car there over;
-`;
-const ua = `
-Знищити;
-Пригоди;
-Передбачити;
-Виробляти;
-Повна;
-Воістину;
-Вибух;
-Постачання;
-Натомість;
-Запасний;
-Якось;
-Вибухнути;
-Буквально;
-Шпигун;
-Ближче;
-Колоти;
-Суд;
-Гол;
-Зношені;
-Спостерігати;
-Нетерплячий;
-Свідчення;
-Спалах;
-Винуватий;
-Загроза;
-Стежка;
-Повага;
-Дурень;
-Втеча;
-Користь;
-Розкрити;
-Боягуз;
-Гордий;
-Визнати;
-Чистий;
-Співпрацювати;
-Зрештою;
-Розв’язати;
-Заздрість;
-Шкода;
-Очевидно;
-Мабуть;
-Quilty;
-Зло;
-Поспіх;
-Працевлаштування;
-Страшно;
-Наслідок;
-Прольоти;
-Здатний;
-Ледве;
-Доставити;
-Вірити;
-Мед;
-Макет;
-Зрада;
-Вступайте;
-Довіра;
-Рульове управління;
-Попит;
-Вартість;
-Задоволення;
-Редагувати;
-Футляр;
-Шаблон;
-Здаватися;
-Розбійник;
-Раптом;
-Окремі;
-Доля;
-Насамперед;
-Ледве;
-ловушка;
-Укриття;
-Повісити;
-навколо;
-Об'ємне звучання;
-Миттєвий;
-Лизати;
-Розслабся;
-Розтягнення;
-Точний;
-Підсумовуючи;
-Дивитися на;
-Реклама;
-Бум;
-в;
-Залазь;
-В'язкий;
-Жадати;
-Плутати;
-Обраний;
-Примусити;
-Вразити;
-Боротьба;
-Обов’язковий;
-Підйом;
-Скеля;
-База;
-Табір;
-Захоплюватися;
-Зір;
-Відновити;
-Блювота;
-Лихоманка;
-Гербар;
-Запаморочення;
-Ін'єкції;
-Зайнято;
-Присвячувати;
-Призначити;
-Отримувати;
-Винайти;
-Середній;
-Усвідомлений;
-Плутати;
-Щоденно;
-Кричати;
-Схильні;
-Пісний;
-Ковдра;
-Широкий;
-Грубо;
-Поміркуйте;
-Зіткнувся;
-Дозвіл;
-Виникає;
-Застосувати;
-Гібридний;
-Припустимо;
-Вирівняно;
-Обсяг;
-Рух;
-Вплив;
-Через мене;
-Власне;
-Оглянути;
-Підприємство;
-Враження;
-Той самий;
-Цілком;
-Відхилити;
-Відсутній;
-Виникає;
-Вовняний;
-Гібридний;
-Там для;
-Отже;
-Дійсно;
-Загалом;
-Крім того;
-Попри;
-Як правило;
-Виродка;
-Заспокойся;
-Ніколи не міна;
-Я маю на увазі;
-Насправді;
-Як що;
-Вболівати;
-Залазь;
-Тримає;
-Вчасно;
-Страшно;
-Товариш;
-Збирати;
-Обов’язки;
-Варіація;
-Дохід;
-Прибуток;
-Десятиліття;
-Вигоріла;
-Занотовувати;
-Форма;
-Поповнення запасів;
-Сума;
-Екстремальний;
-Джерело;
-Бесіда;
-Середній;
-Отримати;
-Влаштувати;
-Сліпий;
-Заробітна плата;
-Сільський;
-Гол;
-Підхід;
-Потягнути;
-Скасувати;
-Повторити;
-Комітет;
-Вивчити;
-Запит;
-Посилання;
-Послідовний;
-Пачка;
-Випробування;
-Підтвердити;
-Такі;
-Спеціальні;
-коригувати;
-чарівність;
-злиття;
-рухатися;
-втілювати;
-збентежений;
-не хвилюйтесь;
-час минув;
-прес;
-виробляти;
-схвалювати;
-розгорнути;
-розмова;
-перехрестя;
-налаштувати;
-відтворювати;
-швидко;
-постановлення;
-анаболічний;
-згадка;
-метричні;
-компер;
-стосовно;
-стає;
-видавець;
-імпресія;
-посланний;
-макет;
-важко;
-загалом;
-швидко;
-постановлення;
-згадка;
-порівнювати;
-стосовно;
-стає;
-видавець;
-імпресія;
-макет;
-важко;
-загалом;
-підживлення;
-ущільнювати;
-подібний;
-сумісні;
-розділити;
-пов'язувати;
-місцевість;
-настроюється;
-покращення;
-шар;
-горизонт;
-туман;
-Недійсний;
-призначення;
-відбуваються;
-перемикачі-базові шари;
-базовий шар;
-направити;
-знецінити;
-на користь;
-Внутрішньо;
-однозначно;
-фрагмент;
-удар;
-повторювані;
-нульовий;
-пропозиція;
-перемикач;
-можливість;
-реалізація;
-не робить;
-матерія;
-загалом;
-префікс;
-відсутня;
-різниця;
-представляє;
-викриває;
-підшипник;
-хеш;
-звільнений;
-простою;
-вказування;
-обертати;
-підходить;
-межі;
-місцевість;
-перефарбувати;
-поводження;
-лісоруб;
-Майдан;
-Розповсюдження;
-захоплення;
-впізнати;
-виконувати;
-дозувати;
-грошові;
-вбудований;
-запис;
-широкі витрати;
-оскільки;
-проведено;
-записатися;
-через;
-комбайн;
-виконувати;
-підпис;
-кинути;
-захищені;
-реферат;
-запит;
-площі;
-відсотки;
-отримав;
-покриття;
-аналізувати;
-поширені;
-заявляти;
-усвідомлює;
-простота;
-вимагається;
-варіант;
-заявляти;
-складаються;
-комплексний;
-спостерігається;
-боротьба;
-спантеличеність;
-дзвінки;
-Ресурси;
-мужність;
-заохочувати;
-доступ;
-Порожній;
-перевірка;
-край;
-назовні;
-межа;
-за межі;
-майже;
-літак;
-розв’язати;
-заручини;
-визначати;
-спілкуватися;
-одиниця;
-схема;
-комплексний;
-виконує;
-міра;
-отже;
-складатися;
-оглядати;
-якого типу;
-сперечатися;
-скаржитися;
-не згоден;
-їжа;
-відповідно;
-намір;
-розглядати;
-розмовляти;
-вказати;
-прогулянка;
-Повертайся;
-плече;
-гострі відчуття;
-пропозиція;
-тендер;
-тупий;
-рух;
-приблизно;
-іди за мною;
-мааджор;
-цілий час;
-я ніколи не мав на увазі;
-я з'ясував;
-сміємо;
-мабуть;
-мотузка;
-запасний;
-має бути;
-у тебе все буде добре;
-ну насправді;
-Ви дбаєте;
-ти над мною;
-в основному
-коли він це зробив;
-коли -небудь;
-зробив це?;
-принести;
-ми повинні йти;
-я боюся, що це так;
-ти заслуговуєш;
-виїзд;
-принаймні;
-по -третє;
-я пристрасний;
-згідно;
-помста;
-ми отримали;
-що ми робимо;
-у чому різниця;
-жахливо;
-страшний;
-смак;
-гудіти;
-ввімкніть його;
-він нарешті;
-спитати мене;
-іншими словами;
-більше;
-менше;
-те, що ви вважаєте менш важливим;
-впевнений у собі;
-чи є різниця між вами та мною ?;
-самодопомога;
-доступний;
-в реальності;
-мати значення;
-де є?;
-let is to to;
-скільки це коштує;
-голодний;
-котра година;
-могло бути гірше;
-могло б бути краще;
-загалом! непогано;
-мене навчили;
-ніколи краще;
-що означає це слово;
-це чудово звучить;
-що смокче;
-Зачекай;
-давайте трохи;
-i вниз;
-черга;
-за шуре !;
-я буду сумувати за тобою;
-бути вчасно;
-повідомити вас;
-це нісенітниця;
-чітко;
-це твоя провина;
-але ти не залишаєш мені вибору;
-ви пошкодуєте про це;
-ти сміливий;
-це насправді;
-що походить від;
-це задоволення;
-сподіваюся;
-введення;
-я не міг зробити;
-ти хотів би мати;
-це мило;
-ми напевно будемо;
-я просто радий;
-це пройшло дуже добре;
-висновок;
-Ця стаття;
-ті;
-будь ласка, зателефонуй мені;
-з моєї точки зору вас;
-стосовно;
-моє найкраще припущення;
-наскільки я бачу;
-крім того;
-незважаючи;
-на основі;
-здатний;
-заздрить;
-відомий з;
-винен у;
-Захоплюється;
-на відміну від;
-звик до;
-молодець;
-так тримати;
-це краще, ніж будь -коли;
-не вибачайтесь;
-забути про це;
-диво;
-пристрасть;
-неспроможність;
-іншими словами;
-проте;
-про країну;
-після всього;
-на сьогоднішній день;
-припустити;
-існує;
-повинен бути;
-безумовно;
-нещодавно я помітив це;
-він стриманий;
-один з них; прокинься;
-що завгодно;
-щось стояти;
-яка користь;
-посилатися;
-виконувати;
-спілкувалися;
-складатися;
-оглядати;
-якого типу;
-прийняти;
-я помітив;
-стримувати;
-звичайний;
-андердог;
-підбирати;
-прихильність;
-на твоєму місці;
-давно не бачились;
-вітаю вас;
-я не смішний;
-чесно кажучи;
-я хотів би, але;
-припустимо, що у вас є;
-колоти;
-із задоволенням;
-застарілий;
-він підозрюється в цьому;
-ми напевно будемо;
-ми маємо йти;
-виглядає відчайдушно;
-неймовірний;
-ти не повинен був їхати;
-сходитись далі;
-рідко;
-ледве;
-мені потрібен був вихід;
-я здогадуюсь де завгодно;
-це схоже;
-не зрозумійте мене неправильно;
-як так;
-короткий розповідь;
-ти коли небудь таке робив;
-я зрозумів;
-я виїхав;
-непарний вибір;
-це мене лякає;
-це дивно;
-фактично;
-бездоганно;
-я згадую;
-я перебуваю під враженням;
-відповідний;
-ціла купа;
-буквально;
-наступного дня мені стало боляче;
-заздалегідь;
-впливати;
-окремі;
-добре;
-підмітається;
-невербальний;
-насправді;
-хочу;
-збираюся;
-втекти;
-займатися чимось;
-возитися з долею;
-відносини;
-мені все одно трохи неприємно від цього;
-кілька хороших;
-я відчайдушно, в основному;
-не загалом;
-я це усвідомлюю;
-ти розгойдуєшся за паркан. зачекайте секунду, Альберте;
-Добре;
-як це смішно;
-ти знаєш, як це;
-неправильно;
-але водночас;
-підемо пофарбувати це сідло;
-заспокойся;
-З одного боку;
-я думав запитати;
-пристрасть до;
-відповідати;
-зразки;
-ми всі ними керуватимемо вами;
-давайте розглянемо це ще раз;
-яка мета;
-шок і трепет;
-жахливо;
-саме;
-ручка;
-перебирати речі;
-Я збираюся купити там машину;
-`;
+const allWords = [ 
+    {en: "Destroy", ua: "Знищити"},
+    {en: "Adventure", ua: "Пригоди"},
+    {en: "Predict", ua: "Передбачити"},
+    {en: "Produce", ua: "Виробляти"},
+    {en: "Complete", ua: "Повна"},
+    {en: "Truly", ua: "Воістину"},
+    {en: "Burst", ua: "Вибух"},
+    {en: "Supply", ua: "Постачання"},
+    {en: "Instead", ua: "Натомість"},
+    {en: "Spare", ua: "Запасний"},
+    {en: "At once", ua: "Якось"},
+    {en: "Explode", ua: "Вибухнути"},
+    {en: "Literally", ua: "Буквально"},
+    {en: "Spy", ua: "Шпигун"},
+    {en: "Closer", ua: "Ближче"},
+    {en: "Stab", ua: "Колоти"},
+    {en: "Court", ua: "Суд"},
+    {en: "Goal", ua: "Гол"},
+    {en: "Worn", ua: "Зношені"},
+    {en: "Observe", ua: "Спостерігати"},
+    {en: "Impatient", ua: "Нетерплячий"},
+    {en: "evidence", ua: "Свідчення"},
+    {en: "Flare", ua: "Спалах"},
+    {en: "Blame", ua: "Винуватий"},
+    {en: "Threat", ua: "Загроза"},
+    {en: "Trail", ua: "Стежка"},
+    {en: "Respect", ua: "Повага"},
+    {en: "Fool", ua: "Дурень"},
+    {en: "Escape", ua: "Втеча"},
+    {en: "Sake", ua: "Користь"},
+    {en: "Reveal", ua: "Розкрити"},
+    {en: "Coward", ua: "Боягуз"},
+    {en: "Proud", ua: "Гордий"},
+    {en: "Admit", ua: "Визнати"},
+    {en: "Pure", ua: "Чистий"},
+    {en: "Cooperate", ua: "Співпрацювати"},
+    {en: "Eventually", ua: "Зрештою"},
+    {en: "Solve", ua: "Розв’язати"},
+    {en: "Envy", ua: "Заздрість"},
+    {en: "Regret", ua: "Шкода"},
+    {en: "Obviously", ua: "Очевидно"},
+    {en: "Apparently", ua: "Мабуть"},
+    {en: "Evil", ua: "Зло"},
+    {en: "Rush", ua: "Поспіх"},
+    {en: "Employ", ua: "Працевлаштування"},
+    {en: "Dire", ua: "Страшно"},
+    {en: "Consequence", ua: "Наслідок"},
+    {en: "Spans", ua: "Прольоти"},
+    {en: "Able", ua: "Здатний"},
+    {en: "Barely", ua: "Ледве"},
+    {en: "Deliver", ua: "Доставити"},
+    {en: "Rely", ua: "Вірити"},
+    {en: "Honey", ua: "Мед"},
+    {en: "Mock", ua: "Макет"},
+    {en: "Betray", ua: "Зрада"},
+    {en: "Get on", ua: "Вступайте"},
+    {en: "Trust", ua: "Довіра"},
+    {en: "Steer", ua: "Рульове управління"},
+    {en: "Demand", ua: "Попит"},
+    {en: "Cost", ua: "Вартість"},
+    {en: "Pleasure", ua: "Задоволення"},
+    {en: "Edit", ua: "Редагувати"},
+    {en: "Case", ua: "Футляр"},
+    {en: "Template", ua: "Шаблон"},
+    {en: "Give up", ua: "Здаватися"},
+    {en: "Robber", ua: "Розбійник"},
+    {en: "Suddenly", ua: "Раптом"},
+    {en: "Separate", ua: "Окремі"},
+    {en: "Dest", ua: "Доля"},
+    {en: "Primarily", ua: "Насамперед"},
+    {en: "Barely", ua: "Ледве"},
+    {en: "trap", ua: "ловушка"},
+    {en: "Shelter", ua: "Укриття"},
+    {en: "Hang", ua: "Повісити"},
+    {en: "around", ua: "навколо"},
+    {en: "Surround", ua: "Об'ємне звучання"},
+    {en: "Instant", ua: "Миттєвий"},
+    {en: "Lick", ua: "Лизати"},
+    {en: "Chill out", ua: "Розслабся"},
+    {en: "Sprain", ua: "Розтягнення"},
+    {en: "Exact", ua: "Точний"},
+    {en: "To sum up", ua: "Підсумовуючи"},
+    {en: "Stare at", ua: "Дивитися на"},
+    {en: "Advert", ua: "Реклама"},
+    {en: "Bumb", ua: "Бум"},
+    {en: "into", ua: "в"},
+    {en: "Get into", ua: "Залазь"},
+    {en: "Stuffy", ua: "в'язкий"},
+    {en: "Crave", ua: "Жадати"},
+    {en: "Confuse", ua: "Плутати"},
+    {en: "Elect", ua: "Обраний"},
+    {en: "Enforce", ua: "Примусити"},
+    {en: "Impress", ua: "Вразити"},
+    {en: "Struggle", ua: "Боротьба"},
+    {en: "Compulsory", ua: "Обов’язковий"},
+    {en: "Climb", ua: "Підйом"},
+    {en: "Cliff", ua: "Скеля"},
+    {en: "Base", ua: "База"},
+    {en: "Camp", ua: "Табір"},
+    {en: "Admire", ua: "Захоплюватися"},
+    {en: "Sight", ua: "Зір"},
+    {en: "Recover", ua: "Відновити"},
+    {en: "Vomit", ua: "Блювота"},
+    {en: "Fever", ua: "Лихоманка"},
+    {en: "Herbar", ua: "Гербар"},
+    {en: "Dizzy", ua: "Запаморочення"},
+    {en: "Injection", ua: "Ін'єкції"},
+    {en: "Busy", ua: "Зайнято"},
+    {en: "Dedicate", ua: "Присвячувати"},
+    {en: "Prescribe", ua: "Призначити"},
+    {en: "Receive", ua: "Отримувати"},
+    {en: "Invent", ua: "Винайти"},
+    {en: "Average", ua: "Середній"},
+    {en: "Aware", ua: "Усвідомлений"},
+    {en: "Confuse", ua: "Плутати"},
+    {en: "Daily", ua: "Щоденно"},
+    {en: "Shout", ua: "Кричати"},
+    {en: "Tend", ua: "Схильні"},
+    {en: "Lean", ua: "Пісний"},
+    {en: "Quilt", ua: "Ковдра"},
+    {en: "Wide", ua: "Широкий"},
+    {en: "Rude", ua: "Грубо"},
+    {en: "Consider", ua: "Поміркуйте"},
+    {en: "Faced", ua: "Зіткнувся"},
+    {en: "Permit", ua: "Дозвіл"},
+    {en: "Occurs", ua: "Виникає"},
+    {en: "Apply", ua: "Застосувати"},
+    {en: "Hybrid", ua: "Гібридний"},
+    {en: "Assume", ua: "Припустимо"},
+    {en: "Aligned", ua: "Вирівняно"},
+    {en: "Volume", ua: "Обсяг"},
+    {en: "Motion", ua: "Рух"},
+    {en: "Impact", ua: "Вплив"},
+    {en: "Because Of Me", ua: "Через мене"},
+    {en: "Actually", ua: "Власне"},
+    {en: "Inspect", ua: "Оглянути"},
+    {en: "Enture", ua: "Підприємство"},
+    {en: "Impression", ua: "Враження"},
+    {en: "The same", ua: "Той самий"},
+    {en: "Quite", ua: "Цілком"},
+    {en: "Reject", ua: "Відхилити"},
+    {en: "Absent", ua: "Відсутній"},
+    {en: "Occurs", ua: "Виникає"},
+    {en: "Woolly", ua: "Вовняний"},
+    {en: "Hybrid", ua: "Гібридний"},
+    {en: "There for", ua: "Там для"},
+    {en: "Hence", ua: "Отже"},
+    {en: "Indeed", ua: "Дійсно"},
+    {en: "Generally", ua: "Загалом"},
+    {en: "Besides", ua: "Крім того"},
+    {en: "In spite of", ua: "Попри"},
+    {en: "As a rule", ua: "Як правило"},
+    {en: "Freak", ua: "Виродка"},
+    {en: "Calm down", ua: "Заспокойся"},
+    {en: "Never mina", ua: "Ніколи не міна"},
+    {en: "I mean", ua: "Я маю на увазі"},
+    {en: "For real", ua: "Насправді"},
+    {en: "Like what", ua: "Як що"},
+    {en: "Cheer", ua: "Вболівати"},
+    {en: "Get in", ua: "Залазь"},
+    {en: "Holds", ua: "Тримає"},
+    {en: "On time", ua: "Вчасно"},
+    {en: "Scary", ua: "Страшно"},
+    {en: "Fellow", ua: "Товариш"},
+    {en: "Gather", ua: "Збирати"},
+    {en: "Duties", ua: "Обов’язки"},
+    {en: "Vary", ua: "Варіація"},
+    {en: "Income", ua: "Дохід"},
+    {en: "Profit", ua: "Прибуток"},
+    {en: "Decade", ua: "Десятиліття"},
+    {en: "Burnt", ua: "Вигоріла"},
+    {en: "To note", ua: "Занотовувати"},
+    {en: "Shape", ua: "Форма"},
+    {en: "Restock", ua: "Поповнення запасів"},
+    {en: "Amount", ua: "Сума"},
+    {en: "Extreme", ua: "Екстремальний"},
+    {en: "Source", ua: "Джерело"},
+    {en: "Conversation", ua: "Бесіда"},
+    {en: "Average", ua: "Середній"},
+    {en: "Obtain", ua: "Отримати"},
+    {en: "Arrange", ua: "Влаштувати"},
+    {en: "Blind", ua: "Сліпий"},
+    {en: "Wage", ua: "Заробітна плата"},
+    {en: "Rural", ua: "Сільський"},
+    {en: "Goal", ua: "Гол"},
+    {en: "Approach", ua: "Підхід"},
+    {en: "Pull", ua: "Потягнути"},
+    {en: "Undo", ua: "Скасувати"},
+    {en: "Redo", ua: "Повторити"},
+    {en: "Comit", ua: "Комітет"},
+    {en: "Examine", ua: "Вивчити"},
+    {en: "Request", ua: "Запит"},
+    {en: "Ref", ua: "Посилання"},
+    {en: "Consistent", ua: "Послідовний"},
+    {en: "Bundle", ua: "Пачка"},
+    {en: "Trial", ua: "Випробування"},
+    {en: "Affirm", ua: "Підтвердити"},
+    {en: "Such", ua: "Такі"},
+    {en: "Special", ua: "Спеціальні"},
+    {en: "adjust", ua: "коригувати"},
+    {en: "charm", ua: "чарівність"},
+    {en: "merger", ua: "злиття"},
+    {en: "move", ua: "рухатися"},
+    {en: "embody", ua: "втілювати"},
+    {en: "baffled", ua: "збентежений"},
+    {en: "don't worry", ua: "не хвилюйтесь"},
+    {en: "time has passed", ua: "час минув"},
+    {en: "press", ua: "прес"},
+    {en: "produce", ua: "виробляти"},
+    {en: "approve", ua: "схвалювати"},
+    {en: "deploy", ua: "розгорнути"},
+    {en: "conversation", ua: "розмова"},
+    {en: "intersection", ua: "перехрестя"},
+    {en: "customize", ua: "налаштувати"},
+    {en: "reproduce", ua: "відтворювати"},
+    {en: "quickly", ua: "швидко"},
+    {en: "decition", ua: "постановлення"},
+    {en: "anable", ua: "анаболічний"},
+    {en: "mention", ua: "згадка"},
+    {en: "metric", ua: "метричні"},
+    {en: "comper", ua: "компер"},
+    {en: "regarding", ua: "стосовно"},
+    {en: "becomes", ua: "стає"},
+    {en: "publisher", ua: "видавець"},
+    {en: "immpresion", ua: "імпресія"},
+    {en: "sentually", ua: "посланний"},
+    {en: "mock", ua: "макет"},
+    {en: "difficult", ua: "важко"},
+    {en: "generally", ua: "загалом"},
+    {en: "quickly", ua: "швидко"},
+    {en: "decition", ua: "постановлення"},
+    {en: "mention", ua: "згадка"},
+    {en: "compare", ua: "порівнювати"},
+    {en: "regarding", ua: "стосовно"},
+    {en: "becomes", ua: "стає"},
+    {en: "publisher", ua: "видавець"},
+    {en: "immpretion", ua: "імпресія"},
+    {en: "mock", ua: "макет"},
+    {en: "difficult", ua: "важко"},
+    {en: "generally", ua: "загалом"},
+    {en: "imoleament", ua: "підживлення"},
+    {en: "compale", ua: "ущільнювати"},
+    {en: "simmilar", ua: "подібний"},
+    {en: "compatible", ua: "сумісні"},
+    {en: "divide", ua: "розділити"},
+    {en: "relate", ua: "пов'язувати"},
+    {en: "terrain", ua: "місцевість"},
+    {en: "customizable", ua: "настроюється"},
+    {en: "enhancements", ua: "покращення"},
+    {en: "layer", ua: "шар"},
+    {en: "horizon", ua: "горизонт"},
+    {en: "fog", ua: "туман"},
+    {en: "Invalid", ua: "Недійсний"},
+    {en: "assignment", ua: "призначення"},
+    {en: "occur", ua: "відбуваються"},
+    {en: "toggle-baselayers", ua: "перемикачі-базові шари"},
+    {en: "baselayer", ua: "базовий шар"},
+    {en: "referre", ua: "направити"},
+    {en: "deprecate", ua: "знецінити"},
+    {en: "in favor", ua: "на користь"},
+    {en: "Internally", ua: "Внутрішньо"},
+    {en: "plainly", ua: "однозначно"},
+    {en: "snippet", ua: "фрагмент"},
+    {en: "hit", ua: "удар"},
+    {en: "repetitive", ua: "повторювані"},
+    {en: "nullish", ua: "нульовий"},
+    {en: "proposal", ua: "пропозиція"},
+    {en: "toggler", ua: "перемикач"},
+    {en: "posibility", ua: "можливість"},
+    {en: "impleament", ua: "реалізація"},
+    {en: "doesn't", ua: "не робить"},
+    {en: "matter", ua: "матерія"},
+    {en: "generally", ua: "загалом"},
+    {en: "prefix", ua: "префікс"},
+    {en: "abvious", ua: "відсутня"},
+    {en: "diff", ua: "різниця"},
+    {en: "represents", ua: "представляє"},
+    {en: "exposes", ua: "викриває"},
+    {en: "bearing", ua: "підшипник"},
+    {en: "hash", ua: "хеш"},
+    {en: "fired", ua: "звільнений"},
+    {en: "idle", ua: "простою"},
+    {en: "pointing", ua: "вказування"},
+    {en: "rotate", ua: "обертати"},
+    {en: "fit", ua: "підходить"},
+    {en: "bounds", ua: "межі"},
+    {en: "terrain", ua: "місцевість"},
+    {en: "repaint", ua: "перефарбувати"},
+    {en: "handling", ua: "поводження"},
+    {en: "logger", ua: "лісоруб"},
+    {en: "Square", ua: "Майдан"},
+    {en: "Discast", ua: "Розповсюдження"},
+    {en: "capture", ua: "захоплення"},
+    {en: "recognize", ua: "впізнати"},
+    {en: "execute", ua: "виконувати"},
+    {en: "dispense", ua: "дозувати"},
+    {en: "monetary", ua: "грошові"},
+    {en: "built in", ua: "вбудований"},
+    {en: "record", ua: "запис"},
+    {en: "we got", ua: "ми отримали"},
+    {en: "what we do", ua: "що ми робимо"},
+    {en: "what makes all the difference", ua: "у чому різниця"},
+    {en: "horrible", ua: "жахливо"},
+    {en: "terrible", ua: "страшний"},
+    {en: "taste", ua: "смак"},
+    {en: "to buzz", ua: "гудіти"},
+    {en: "buzz him in", ua: "ввімкніть його"},
+    {en: "he finnaly", ua: "він нарешті"},
+    {en: "to ask me", ua: "спитати мене"},
+    {en: "in other words", ua: "іншими словами"},
+    {en: "more", ua: "більше"},
+    {en: "less", ua: "менше"},
+    {en: "what you think is less important", ua: "те, що ви вважаєте менш важливим"},
+    {en: "confident", ua: "впевнений у собі"},
+    {en: "is there a defference between you and me?", ua: "чи є різниця між вами та мною ?"},
+    {en: "self-help", ua: "самодопомога"},
+    {en: "availabel", ua: "доступний"},
+    {en: "inreality", ua: "в реальності"},
+    {en: "to matter", ua: "мати значення"},
+    {en: "where is the?", ua: "де є?"},
+    {en: "let is go to", ua: "let is to to"},
+    {en: "how much is this", ua: "скільки це коштує"},
+    {en: "hungry", ua: "голодний"},
+    {en: "what time is it", ua: "котра година"},
+    {en: "could be worse", ua: "могло бути гірше"},
+    {en: "could be better", ua: "могло б бути краще"},
+    {en: "in general! not bad", ua: "загалом! непогано"},
+    {en: "i was learnt", ua: "мене навчили"},
+    {en: "never better", ua: "ніколи краще"},
+    {en: "what dows this word mean", ua: "що означає це слово"},
+    {en: "that sound greate", ua: "це чудово звучить"},
+    {en: "that suks", ua: "що смокче"},
+    {en: "hold on", ua: "Зачекай"},
+    {en: "lets have some", ua: "давайте трохи"},
+    {en: "i down", ua: "i вниз"},
+    {en: "queue", ua: "черга"},
+    {en: "for shure!", ua: "за шуре !"},
+    {en: "i will you miss to", ua: "я буду сумувати за тобою"},
+    {en: "to be here on time", ua: "бути вчасно"},
+    {en: "to inform you", ua: "повідомити вас"},
+    {en: "this is nonsense", ua: "це нісенітниця"},
+    {en: "clearly", ua: "чітко"},
+    {en: "this is your fault", ua: "це твоя провина"},
+    {en: "but you leave me no choice", ua: "але ти не залишаєш мені вибору"},
+    {en: "you will regret this", ua: "ви пошкодуєте про це"},
+    {en: "you are a brave", ua: "ти сміливий"},
+    {en: "those are actually", ua: "це насправді"},
+    {en: "that comes from", ua: "що походить від"},
+    {en: "it is pleasure", ua: "це задоволення"},
+    {en: "hopefully", ua: "сподіваюся"},
+    {en: "introduction", ua: "введення"},
+    {en: "i couldn't make", ua: "я не міг зробити"},
+    {en: "would you like to have some", ua: "ти хотів би мати"},
+    {en: "that is nice", ua: "це мило"},
+    {en: "we will probably", ua: "ми напевно будемо"},
+    {en: "i am just glad", ua: "я просто радий"},
+    {en: "it went really well", ua: "це пройшло дуже добре"},
+    {en: "conclusion", ua: "висновок"},
+    {en: "this article", ua: "Ця стаття"},
+    {en: "those", ua: "ті"},
+    {en: "please call me", ua: "будь ласка, зателефонуй мені"},
+    {en: "from my point of you", ua: "з моєї точки зору вас"},
+    {en: "with regard to", ua: "стосовно"},
+    {en: "my best guess", ua: "моє найкраще припущення"},
+    {en: "as far as i can see", ua: "наскільки я бачу"},
+    {en: "besides", ua: "крім того"},
+    {en: "despite", ua: "незважаючи"},
+    {en: "based on", ua: "на основі"},
+    {en: "capable of", ua: "здатний"},
+    {en: "envious of", ua: "заздрить"},
+    {en: "famous of", ua: "відомий з"},
+    {en: "guilty of", ua: "винен у"},
+    {en: "keen on", ua: "Захоплюється"},
+    {en: "opposed to", ua: "на відміну від"},
+    {en: "used to", ua: "звик до"},
+    {en: "well done", ua: "молодець"},
+    {en: "keep it up", ua: "так тримати"},
+    {en: "that's better than ever", ua: "це краще, ніж будь -коли"},
+    {en: "dont apologize", ua: "не вибачайтесь"},
+    {en: "forget about it", ua: "забути про це"},
+    {en: "miracle", ua: "диво"},
+    {en: "passion", ua: "пристрасть"},
+    {en: "disire", ua: "неспроможність"},
+    {en: "in other words", ua: "іншими словами"},
+    {en: "however", ua: "проте"},
+    {en: "on the country", ua: "про країну"},
+    {en: "after all", ua: "після всього"},
+    {en: "to date", ua: "на сьогоднішній день"},
+    {en: "assume", ua: "припустити"},
+    {en: "there is", ua: "існує"},
+    {en: "gotta be", ua: "повинен бути"},
+    {en: "definitely", ua: "безумовно"},
+    {en: "recently, i notice that", ua: "нещодавно я помітив це"},
+    {en: "he is restrain", ua: "він стриманий"},
+    {en: "one of them", ua: "один з них"},
+    {en: "wake up", ua: "прокинься"},
+    {en: "whatever", ua: "що завгодно"},
+    {en: "something stange", ua: "щось стояти"},
+    {en: "what is the benefit", ua: "яка користь"},
+    {en: "refer", ua: "посилатися"},
+    {en: "execute", ua: "виконувати"},
+    {en: "communicated", ua: "спілкувалися"},
+    {en: "consist", ua: "складатися"},
+    {en: "examine", ua: "оглядати"},
+    {en: "what kind of", ua: "якого типу"},
+    {en: "to aassume", ua: "прийняти"},
+    {en: "i notice", ua: "я помітив"},
+    {en: "to restrain", ua: "стримувати"},
+    {en: "ordinary", ua: "звичайний"},
+    {en: "underdog", ua: "андердог"},
+    {en: "to pick on", ua: "підбирати"},
+    {en: "affection", ua: "прихильність"},
+    {en: "if i were you", ua: "на твоєму місці"},
+    {en: "long time no see", ua: "давно не бачились"},
+    {en: "greit to see you", ua: "вітаю вас"},
+    {en: "i am not being funny", ua: "я не смішний"},
+    {en: "to be honest", ua: "чесно кажучи"},
+    {en: "i would love but", ua: "я хотів би, але"},
+    {en: "supposed you have", ua: "припустимо, що у вас є"},
+    {en: "stab", ua: "колоти"},
+    {en: "with pleasure", ua: "із задоволенням"},
+    {en: "deprecated", ua: "застарілий"},
+    {en: "he is suspect that", ua: "він підозрюється в цьому"},
+    {en: "we will probably", ua: "ми напевно будемо"},
+    {en: "we gotta go", ua: "ми маємо йти"},
+    {en: "it looks desperat", ua: "виглядає відчайдушно"},
+    {en: "incredible", ua: "неймовірний"},
+    {en: "you should not have gone", ua: "ти не повинен був їхати"},
+    {en: "converge on", ua: "сходитись далі"},
+    {en: "rarely", ua: "рідко"},
+    {en: "barely", ua: "ледве"},
+    {en: "i needed out", ua: "мені потрібен був вихід"},
+    {en: "i guess anywhere", ua: "я здогадуюсь де завгодно"},
+    {en: "is that like", ua: "це схоже"},
+    {en: "dont get me wrong", ua: "не зрозумійте мене неправильно"},
+    {en: "how come", ua: "як так"},
+    {en: "long story short", ua: "короткий розповідь"},
+    {en: "did you ever thing that", ua: "ти коли небудь таке робив"},
+    {en: "i realized", ua: "я зрозумів"},
+    {en: "i moved out", ua: "я виїхав"},
+    {en: "odd choice", ua: "непарний вибір"},
+    {en: "it scare me", ua: "це мене лякає"},
+    {en: "that is weird", ua: "це дивно"},
+    {en: "in fact", ua: "фактично"},
+    {en: "expessially", ua: "бездоганно"},
+    {en: "i mention", ua: "я згадую"},
+    {en: "i am impressed", ua: "я перебуваю під враженням"},
+    {en: "appropriate", ua: "відповідний"},
+    {en: "whole bunch", ua: "ціла купа"},
+    {en: "litteraly", ua: "буквально"},
+    {en: "i was sore the next day", ua: "наступного дня мені стало боляче"},
+    {en: "advance", ua: "заздалегідь"},
+    {en: "influence", ua: "впливати"},
+    {en: "separate", ua: "окремі"},
+    {en: "we'll", ua: "добре"},
+    {en: "swept", ua: "підмітається"},
+    {en: "nonverbal", ua: "невербальний"},
+    {en: "actually", ua: "насправді"},
+    {en: "wanna", ua: "хочу"},
+    {en: "gonna", ua: "збираюся"},
+    {en: "get away", ua: "втекти"},
+    {en: "to be into something", ua: "займатися чимось"},
+    {en: "mess with fate", ua: "возитися з долею"},
+    {en: "relationship", ua: "відносини"},
+    {en: "i am little uncomfortable with this anyway", ua: "мені все одно трохи неприємно від цього"},
+    {en: "some good ones", ua: "кілька хороших"},
+    {en: "i'm desperate, basically", ua: "я відчайдушно, в основному"},
+    {en: "not in general", ua: "не загалом"},
+    {en: "i realize that", ua: "я це усвідомлюю"},
+    {en: "you swing for the fence. hold on aa second, Albert", ua: "ти розгойдуєшся за паркан. зачекайте секунду, Альберте"},
+    {en: "That's good", ua: "Добре"},
+    {en: "how ridiculous this is", ua: "як це смішно"},
+    {en: "you know what it's like", ua: "ти знаєш, як це"},
+    {en: "wrong", ua: "неправильно"},
+    {en: "but at the same time", ua: "але водночас"},
+    {en: "let's go paint that seiling", ua: "підемо пофарбувати це сідло"},
+    {en: "take it easy", ua: "заспокойся"},
+    {en: "On the one hand", ua: "З одного боку"},
+    {en: "i thought  to ask", ua: "я думав запитати"},
+    {en: "passion for", ua: "пристрасть до"},
+    {en: "respond", ua: "відповідати"},
+    {en: "samples", ua: "зразки"},
+    {en: "we will run the whole lot of them by you", ua: "ми всі ними керуватимемо вами"},
+    {en: "let is go over this one more time", ua: "давайте розглянемо це ще раз"},
+    {en: "what is the objective", ua: "яка мета"},
+    {en: "shock and awe", ua: "шок і трепет"},
+    {en: "awful", ua: "жахливо"},
+    {en: "exactly", ua: "саме"},
+    {en: "handle", ua: "ручка"},
+    {en: "to go over things", ua: "перебирати речі"},
+    {en: "I going to buy a car there over", ua: "Я збираюся купити там машину"}
+];
 
-export const enWords = en.split(';');
-export const uaWords = ua.split(';');
-
-export const allWords = enWords.map((word, id) => {
-    return {
-        en: word.replace(/[\n\t]+/g, '').split("").join("").trim(),
-        ua: uaWords[id].replace(/[\n\t]+/g, '').split("").join("").trim(),
+const users = [
+    {
+        name: "oleg",
+        surname: "salabay",
+        email: "olegsalabaymac@gmail.com",
+        photo: "",
+        describe: "",
+        password: "",
     }
-});
+];
+
+export {
+    allWords,
+    users
+};

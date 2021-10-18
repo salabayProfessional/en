@@ -10,6 +10,7 @@ import View from './View';
 import Timer from '../../component/Timer/Timer';
 import { RootReducer } from '../../store/slices/types';
 import { InitialValues } from './types';
+import { allWords } from '../../mockData/words';
 
 const makeRandomArr = (arr: any) => {
   let randomArr = []; 
@@ -37,6 +38,8 @@ const Test: React.FC = () => {
     answer: '',
     answers: [],
   };
+
+  console.log(allWords)
 
   const onSubmit = (values: any) => {
     values.answers.push(values.answer);
@@ -75,7 +78,7 @@ const Test: React.FC = () => {
   return (
     <div className="page">
       { start && <Timer timer={60} /> }
-      { isOptions && <Options /> }
+      <Options isOpen={isOptions} />
 
       <ModalNotice isModal={seeResults} toggle={() => setSeeResults(!seeResults)}/>
 

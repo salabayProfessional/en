@@ -1,22 +1,9 @@
 .row-wrapper {
-   display: flex;
-   flex-wrap: wrap;
-  .left { 
-    width: 100%;
-  }
+  display: flex;
+  justify-content: space-around;
 
-  .right {
-    width: 100%;
-  }
-
-  @media (max-width: 1000px) {
-    font-size: 40px;
-    .left { 
-      width: 100%;
-    }
-  
-    .right {
-      width: 100%;
-    }
+  @media (max-width: 400px) {
+    display: flex;
+    flex-direction: column;
   }
 }

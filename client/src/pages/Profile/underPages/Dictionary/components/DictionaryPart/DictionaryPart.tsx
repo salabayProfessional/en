@@ -2,7 +2,7 @@ import React from 'react';
 import { Table } from 'reactstrap';
 import { generateString } from '../../../../../../specialFunction/specialFunction';
 
-const DictionaryPart: React.FC<any> = ({
+const TableWords: React.FC<any> = ({
   activeDictionary, 
   register,
   isHideColumnEn,
@@ -11,7 +11,7 @@ const DictionaryPart: React.FC<any> = ({
 
   return (
     <>
-      <Table className="table-dictionary-words">
+      <Table className="table-words">
         <thead>
           <tr>
             <th>#</th>
@@ -28,7 +28,7 @@ const DictionaryPart: React.FC<any> = ({
                     <th scope="row">{ idx }</th>
                     {!isHideColumnEn? <td className="words-column">{ word.en }</td> : <td className="words-column"></td>}
                     {!isHideColumnUa? <td className="words-column">{ word.ua }</td> : <td className="words-column"></td>}
-                    <td><input defaultValue="" {...register(`answers${word.en}`)} /></td>
+                    <td><input className="form-control" defaultValue="" {...register(`answers${word.en}`)} /></td>
                   </tr>
                 )
               })
@@ -40,4 +40,4 @@ const DictionaryPart: React.FC<any> = ({
   )
 };
 
-export default DictionaryPart;
+export default TableWords;

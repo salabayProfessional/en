@@ -1,9 +1,14 @@
 .results-page {
-  .result-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+
+  .test-list {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    height: 550px;
+    height: 100%;
   }
 }
 
@@ -11,6 +16,7 @@
   width: 100%;
   height: 80px;
   background-color: rgb(15, 70, 83);
+  color: white;
 
   .statistics__list {
     display: flex;

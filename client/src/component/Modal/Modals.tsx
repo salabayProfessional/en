@@ -37,7 +37,7 @@ const ModalInfo: React.FC<ModalInfoTypes> = ({
       confirm={passTest}
       isBody
     >
-      <tbody className="words-list">
+      <tbody className="table-words">
         {
           test?.words.map((word: {en: string, ua: string}) => {
             return (
@@ -71,12 +71,12 @@ const ModalCreatedTest: React.FC<ModalType> = ({
 
   const allWordsList = allWords.map((word: {en: string, ua: string}, idx: number) => {
     return (
-      <tr key={`list-info-${idx}`}>
+      <tr key={`list-success-${idx}`}>
         <td>{word.en}</td>
         <td>{word.ua}</td>
         <th><Field type="checkbox" value={word.en}/></th>
       </tr>
-    )
+    ) 
   });
 
   const onSubmit = (values: InitialValuesModalCreate) => {
@@ -175,16 +175,16 @@ const ModalResult: React.FC<{
       >
         <ModalHeader>
           <h2 className="title">{result?.name}</h2>
-          <Table>
+          <Table className="table-words">
             <tbody>
                 {list}
             </tbody>
           </Table>
           <div className="bottom-panel"> 
-            <div className="bottom-panel__left col-12">
-              <div className="col">type: en-ua</div>
-              <div className="col">true: {result?.result.length}</div>
-              <div className="col">timer: 60</div>
+            <div className="bottom-panel__inner">
+              <span className="inline-block">type: en-ua</span>
+              <span className="inline-block">true: {result?.result.length}</span>
+              <span className="inline-block">timer: 60</span>
             </div>
           </div>
         </ModalHeader>

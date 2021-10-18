@@ -1,46 +1,12 @@
-.setting-page {
+.page {
+  .setting-page {
 
-  .user-data {
-    justify-content: space-between;
-    flex-direction: column;
-
-    .user-data-header {
-      display: flex;
-    }
-
-    .user-data-body {
-      display: flex;
-    }
-
-    .user-data-footer {
-      height: 310px;
-      background: #122a44;
-      flex-wrap: wrap;
-    }
-    
-    .set-photo {
-      display: flex;
-      flex-direction: column;
-      width: 260px;
-      height: 260px;
-      justify-content: space-between;
-    }
-  }
-  .btn {
-    margin-top: 10px;
   }
 }
 
 .wid-200 {
   height: 200px;
 }
-
-.avatar {
-  max-width: 490px;
-  max-height: 351px;
-  background-position: center;
-  background-size: contain;
-}  
 
 .btn-100 {
   width:  100%;
