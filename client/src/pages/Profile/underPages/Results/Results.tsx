@@ -13,7 +13,6 @@ const Results: React.FC = () => {
   const [idResult, setIDResult]: any = useState(null);
   const [isModal, setIsModal] = useState(false);
   const [amount, setAmount] = useState(16);
-
   const toggleIsModal = () => setIsModal(!isModal);
 
   return (
@@ -34,6 +33,7 @@ const Results: React.FC = () => {
           return (
             <div className="test__item" key={generateString()}>
               <h3 className="title">{item.name}</h3>
+              <p className="under-title">{`${item?.startTime}`?.slice(11, 19)} - {`${item?.endTime}`.slice(11, 19)}</p>
               <Button 
                 className="btn btn-success btn-center btn-bg border-none" 
                 type="button" 
@@ -47,11 +47,19 @@ const Results: React.FC = () => {
           )
         }}
       </RestrictedList>
-      <button className="btn btn-success btn-bg" onClick={() => {
-        if(amount < results.length) {
-          setAmount(amount + 12);
-        };
-      }}>Yet</button>
+      {
+        results.length > 12 && (
+          <button className="btn btn-success btn-bg" onClick={() => {
+            if(amount < results.length) {
+              setAmount(amount + 12);
+            };
+          }}>Yet</button>
+        )
+      }
+
+      {
+        results.length > 1 && <p className="under-title">"you don't pass a test yet. And then here is nothing"</p>
+      }
     </div>
   )
 };

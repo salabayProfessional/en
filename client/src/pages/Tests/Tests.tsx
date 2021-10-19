@@ -10,7 +10,6 @@ import View from './View';
 import Timer from '../../component/Timer/Timer';
 import { RootReducer } from '../../store/slices/types';
 import { InitialValues } from './types';
-import { allWords } from '../../mockData/words';
 
 const makeRandomArr = (arr: any) => {
   let randomArr = []; 
@@ -33,17 +32,16 @@ const Test: React.FC = () => {
   const [isOptions, setIsOptions] = useState(false);
   const [seeResults, setSeeResults] = useState(false);
   const [random, setRandom] = useState([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]);
+  const [startTime, setStartTime] = useState<any>("");
 
   const initialValues: InitialValues = {
     answer: '',
     answers: [],
   };
 
-  console.log(allWords)
-
   const onSubmit = (values: any) => {
     values.answers.push(values.answer);
-    const auditedTest = auditTranslate(test, values.answers, options, random);
+    const auditedTest = auditTranslate(test, values.answers, options, random, startTime);
     dispatch(push_audited_test(auditedTest));
     setSeeResults(true);
     setCount(0);
@@ -67,6 +65,8 @@ const Test: React.FC = () => {
     }else {
       setTest(gotTest);
     };
+    const date = new Date();
+    setStartTime(date);
     setStart(true);
     setEnd(false);
     setIsOptions(false);

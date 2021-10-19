@@ -70,6 +70,7 @@ const View: React.FC<ViewProps> = ({
 						<button 
 							type="submit" 
 							className={BTN_BG}
+							onKeyDown={handleKeyDown}
 						>
 							END the test
 						</button>

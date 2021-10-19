@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import './Timer.scss';
+import React, { useEffect, useState } from "react";
+import { motion } from "framer-motion"
+import "./Timer.scss";
 
 const Timer: React.FC<{timer: number | string}> = ({timer}) => {
 
@@ -20,10 +21,15 @@ const Timer: React.FC<{timer: number | string}> = ({timer}) => {
   }, [nowTime, timer]);
 
 	return (
-		<div className={`alert-${nowTime < timer ? "success" : "danger"} timer`}>
+		<motion.div 
+			animate={{y: 0, rotate: 360}}
+			initial={{y: "-500px"}}
+			transition={{duration: 1}}
+			className={`alert-${nowTime < timer ? "success" : "danger"} timer`}
+		>
 			<h3>Time is up</h3>
 			<h1>{nowTime}/{timer}</h1>
-		</div>
+		</motion.div>
 	)
 };
 

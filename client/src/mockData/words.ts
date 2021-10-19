@@ -499,7 +499,9 @@ const users = [
         email: "olegsalabaymac@gmail.com",
         photo: "",
         describe: "",
-        password: "",
+        password: "1234",
+        role: "admin",
+        dictionary: [],
     }
 ];
 

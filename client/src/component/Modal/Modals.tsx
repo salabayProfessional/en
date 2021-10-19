@@ -123,7 +123,7 @@ const ModalNotice: React.FC<ModalType> = ({isModal, toggle}) => {
   return (
     <CornModal isModal={isModal} toggle={toggle} isBody>
       <ModalHeader toggle={toggle}>See result</ModalHeader>
-        <Button color="btn btn-outline-success" style={{width: "465px"}} onClick={() => {
+        <Button color="btn btn-outline-success" style={{width: "100%"}} onClick={() => {
           setRedirect(true);
           toggle();
         }}>To look</Button>

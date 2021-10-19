@@ -32,6 +32,7 @@ export interface ResultReducer {
       random: boolean,
     },
     random: number[],
+    date: string,
   }[]
 };
 
@@ -60,7 +61,14 @@ export interface ProfileReducer {
 
 export interface AuthReducer {
   authentication: boolean,
-  role: "admin" | "free" | "super" | "expert"
+  role: "admin" | "free" | "super" | "expert",
+  name: string,
+  surname: string,
+  email: string,
+  photo: string,
+  describe: string,
+  password: string,
+  dictionary: {en: string, ua: string}[],
 }
 
 export interface RootReducer {
