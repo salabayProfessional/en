@@ -10,13 +10,16 @@ const auditTranslate = (
   test: any,
   answers: string[],
   options: any,
-  random: number[]
+  random: number[],
+  startTime: string,
 ) => {
   const type =  options.translate === "en-ua" ? "en" : "ua";
   const words = test.words.map((word: any) => word[type].toLowerCase());
   const sortedAnswers = random.map((_, idx) => answers[random.findIndex((e) => e === idx) as any]);
 
   const audit = words.filter((word: string, idx: number) => checkAnswer(word, sortedAnswers[idx]));
+
+  const endDate = new Date();
 
   return {
     name: test?.name? test.name : "random",
@@ -25,6 +28,8 @@ const auditTranslate = (
     result: audit,
     answers: sortedAnswers,
     options,
+    endDate,
+    startTime,
   };
 };
 
@@ -48,7 +53,7 @@ const createTest: any = (words: any) => (amount: number = 10) => {
 };
 
 const checkAnswer = (word: string, answer: string) => {
-  return answer.includes(word)
+  return answer.toLowerCase().includes(word);
 };
 
 export const makeTest = createTest(allWords);

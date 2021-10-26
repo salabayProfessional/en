@@ -6,7 +6,7 @@ import { set_test, create_test } from '../../store/slices/testsReducer';
 import CornModal from './Modal';
 import { InitialValuesModalCreate, ModalInfoTypes, ModalType } from './types';
 import { Formik, Form, Field } from "formik";
-import { Button, Table, FormGroup, ModalHeader } from 'reactstrap';
+import { Button, Table, FormGroup, ModalHeader, ModalBody } from 'reactstrap';
 import { allWords } from "../../mockData/words";
 import "./Modal.scss";
 
@@ -123,7 +123,7 @@ const ModalNotice: React.FC<ModalType> = ({isModal, toggle}) => {
   return (
     <CornModal isModal={isModal} toggle={toggle} isBody>
       <ModalHeader toggle={toggle}>See result</ModalHeader>
-        <Button color="btn btn-outline-success" style={{width: "465px"}} onClick={() => {
+        <Button color="btn btn-outline-success" style={{width: "100%"}} onClick={() => {
           setRedirect(true);
           toggle();
         }}>To look</Button>
@@ -173,7 +173,7 @@ const ModalResult: React.FC<{
         confirm={repassTest}
         confirmName="Repass"
       >
-        <ModalHeader>
+        <ModalBody>
           <h2 className="title">{result?.name}</h2>
           <Table className="table-words">
             <tbody>
@@ -187,7 +187,7 @@ const ModalResult: React.FC<{
               <span className="inline-block">timer: 60</span>
             </div>
           </div>
-        </ModalHeader>
+        </ModalBody>
       </CornModal>
   );
 };
