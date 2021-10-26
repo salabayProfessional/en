@@ -6,9 +6,6 @@ const Timer: React.FC<{timer: number | string}> = ({timer}) => {
 
 	const [nowTime, setNowTime] = useState(0);
 
-	if(nowTime === timer) {
-		alert("Unsuccess");
-	}
 
   useEffect(() => {
     const timeout = setTimeout(() => {

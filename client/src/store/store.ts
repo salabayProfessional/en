@@ -10,8 +10,9 @@ const persistConfig = {
   transforms: [
     createWhitelistFilter("tests", ["allTests"]),
     createWhitelistFilter("result", ["results"]),
+    createWhitelistFilter("auth", ["dictionary"]),
   ],
-  whitelist: ["tests", "result"],
+  whitelist: ["tests", "result", "auth"],
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

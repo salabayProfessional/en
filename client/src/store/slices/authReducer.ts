@@ -11,32 +11,10 @@ const initialState: AuthReducer = {
   describe: "",
   password: "1234",
   dictionary: [
-    {ua: "інтроверт", en: "introvert"},
-    {ua: "навпроти", en: "accross"},
-    {ua: "перше що спало на думку", en: "first crossed my mind"},
-    {ua: "негайно", en: "right away"},
-    {ua: "", en: "assign"},
-    {ua: "", en: "available"},
-    {ua: "", en: "You should inform"},
-    {ua: "", en: "From time to time"},
-    {ua: "", en: "I turned on the dota"},
-    {ua: "", en: "urgent"},
-    {ua: "", en: "Cool-headed"},
-    {ua: "", en: "The fact is that"},
-    {ua: "", en: "Evidence"},
-    {ua: "інтроверт", en: "introvert"},
-    {ua: "навпроти", en: "accross"},
-    {ua: "перше що спало на думку", en: "first crossed my mind"},
-    {ua: "негайно", en: "right away"},
-    {ua: "", en: "assign"},
-    {ua: "", en: "available"},
-    {ua: "", en: "You should inform"},
-    {ua: "", en: "From time to time"},
-    {ua: "", en: "I turned on the dota"},
-    {ua: "", en: "urgent"},
-    {ua: "", en: "Cool-headed"},
-    {ua: "", en: "The fact is that"},
-    {ua: "", en: "Evidence"},
+    {
+      part: "one", 
+      words: [],
+    }
   ],
 };
 
@@ -50,13 +28,16 @@ const auth = createSlice({
       sign_in: (state) => {
         state.authentication = true
       },
+      add_part_own_dictionary: (state, {payload}) => {
+        state.dictionary = [...state.dictionary, payload];
+      },
       add_word_own_dictionary: (state, {payload}) => {
-        state.dictionary = [...state.dictionary, ...payload];
-      }
+        const foundedPart = state.dictionary.length
+        state.dictionary[foundedPart - 1].words = [...state.dictionary[foundedPart - 1].words, ...payload.word];
+      },
     },
-    extraReducers: (state: any) => state
 });
 
-export const { log_out, sign_in } = auth.actions;
+export const { log_out, sign_in, add_word_own_dictionary, add_part_own_dictionary } = auth.actions;
 
 export default auth.reducer;

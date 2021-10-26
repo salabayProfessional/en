@@ -21,6 +21,7 @@
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.6",
     "enzyme-to-json": "^3.6.2",
+    "evergreen-ui": "^6.5.1",
     "formik": "^2.2.9",
     "formik_typescript_ui": "^2.0.4",
     "framer-motion": "^4.1.17",

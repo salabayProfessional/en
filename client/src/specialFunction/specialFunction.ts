@@ -53,7 +53,7 @@ const createTest: any = (words: any) => (amount: number = 10) => {
 };
 
 const checkAnswer = (word: string, answer: string) => {
-  return answer.includes(word)
+  return answer.toLowerCase().includes(word);
 };
 
 export const makeTest = createTest(allWords);

@@ -68,7 +68,7 @@ export interface AuthReducer {
   photo: string,
   describe: string,
   password: string,
-  dictionary: {en: string, ua: string}[],
+  dictionary: {part: string, words: WordData[]}[],
 }
 
 export interface RootReducer {
@@ -79,4 +79,21 @@ export interface RootReducer {
   dictionary: DictionaryReducer,
   profile: ProfileReducer,
   auth: AuthReducer,
+};
+
+
+export interface WordData {
+  word: string,
+  phonetics: {
+    audio: string
+    text: string
+  }[], 
+  meanings: {partOfSpeech: string, definitions: {
+    definition: string, 
+    example: string, 
+    synonyms: string[], 
+    antonyms: string[],
+  }[]}[],
+  origin: string,
+  phonetic: string
 };

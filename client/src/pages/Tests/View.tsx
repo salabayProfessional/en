@@ -19,7 +19,11 @@ const View: React.FC<ViewProps> = ({
 	const word = start? options.type === "en-ua"? test.words[randomWords[count]].en : test.words[randomWords[count]].ua : "";
 
 	const handleKeyDown = (event: any) => {
+		if(count === options.words - 1) {
+			return
+		}
     if (event.key === 'Enter') {
+			event.preventDefault();
       sendAnswer(setFieldValue, values);
     }
   };
@@ -60,7 +64,6 @@ const View: React.FC<ViewProps> = ({
 							name="answer" 
 							type="text" 
 							placeholder="YOUR ANSWER" 
-							id="inputLarge" 
 							onKeyDown={handleKeyDown}
 						/>
 					)
@@ -72,7 +75,7 @@ const View: React.FC<ViewProps> = ({
 							className={BTN_BG}
 							onKeyDown={handleKeyDown}
 						>
-							END the test
+							END THE TEST
 						</button>
 					)
 				} 
@@ -83,7 +86,7 @@ const View: React.FC<ViewProps> = ({
 						className={BTN_BG}
 						onClick={() => sendAnswer(setFieldValue, values)}
 					>
-						Send answer
+						SEND ANSWER
 					</button>
 					)
 				}
