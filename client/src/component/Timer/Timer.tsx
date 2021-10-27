@@ -12,7 +12,7 @@ const Timer: React.FC<{timer: number | string}> = ({timer}) => {
 			setNowTime(nowTime + 1);
 	  }, 1000);
 
-	if(nowTime === 71) {
+	if(nowTime === 72) {
 		clearTimeout(timeout);
 	};
   }, [nowTime, timer]);
