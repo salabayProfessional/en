@@ -44,7 +44,7 @@ const createTest: any = (words: any) => (amount: number = 10) => {
   let result: any = {name: generateString(), words: []};
 
   for(let i = 0; i < amount ; i++) {
-    randomID.push(Math.floor(Math.random() * 490));
+    randomID.push(Math.floor(Math.random() * 74));
   };
 
   randomID.map((id: any) => result.words.push(words[id]));

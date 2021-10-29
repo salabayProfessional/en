@@ -1,6 +1,5 @@
 .search-word {
   height: 650px;
-  position: fixed;
 
   .search-panel {
     display: flex;
@@ -19,4 +18,17 @@
     padding: 15px;
   }
 
+  @media(max-width: 400px) {
+    height: 650px;
+
+    .search-panel {
+      display: flex;
+      justify-content: space-around;  
+      flex-direction: column;
+    }
+
+    .info-panel {
+      background-color: rgb(235, 235, 235);
+    }
+  }
 }

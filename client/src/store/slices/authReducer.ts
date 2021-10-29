@@ -1,6 +1,9 @@
 import {createSlice} from '@reduxjs/toolkit';
 import { AuthReducer } from './types';
 
+const findPart = (partName: string, state: AuthReducer) => state.dictionary.findIndex((item) => item.part === partName);
+const foundWord = (word: string, state: AuthReducer, partIdx: number) => state.dictionary[partIdx].words.findIndex((item) => item.word === word);
+
 const initialState: AuthReducer = {
   authentication: true,
   role: "admin",
@@ -10,12 +13,7 @@ const initialState: AuthReducer = {
   photo: "",
   describe: "",
   password: "1234",
-  dictionary: [
-    {
-      part: "one", 
-      words: [],
-    }
-  ],
+  dictionary: [],
 };
 
 const auth = createSlice({
@@ -32,12 +30,22 @@ const auth = createSlice({
         state.dictionary = [...state.dictionary, payload];
       },
       add_word_own_dictionary: (state, {payload}) => {
-        const foundedPart = state.dictionary.length
-        state.dictionary[foundedPart - 1].words = [...state.dictionary[foundedPart - 1].words, ...payload.word];
+        const length = state.dictionary.length;
+        state.dictionary[length - 1].words = [...state.dictionary[length - 1].words, ...payload.word];
+      },
+      remove_word: (state, {payload}) => {
+        const {word, part} = payload;
+        const foundedPart = findPart(part, state);
+        const foundedWord = foundWord(word, state, foundedPart);
+
+        state.dictionary[foundedPart].words = [
+          ...state.dictionary[foundedPart].words.slice(0, foundedWord), 
+          ...state.dictionary[foundedPart].words.slice(foundedWord + 1, )
+        ]
       },
     },
 });
 
-export const { log_out, sign_in, add_word_own_dictionary, add_part_own_dictionary } = auth.actions;
+export const { log_out, sign_in, add_word_own_dictionary, add_part_own_dictionary, remove_word } = auth.actions;
 
 export default auth.reducer;

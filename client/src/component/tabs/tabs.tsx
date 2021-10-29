@@ -1,17 +1,17 @@
 import React, { Suspense } from 'react';
 import { TabContent, TabPane, Nav, NavItem, NavLink, Row, Col } from 'reactstrap';
-import { Button, CogIcon } from "evergreen-ui";
+import { Button, CogIcon, ManualIcon, HomeIcon, ResolveIcon, EditIcon, ListIcon } from "evergreen-ui";
 import classnames from 'classnames';
 import { useHistory, useLocation } from 'react-router';
 import Setting from '../../pages/Profile/underPages/setting/Setting';
 import Dictionary from '../../pages/Profile/underPages/Dictionary/Dictionary';
 import Results from '../../pages/Profile/underPages/Results/Results';
 import AllTest from '../../pages/Profile/underPages/All-test/All-test';
-import './tabs.scss';
 import { useRole } from '../../hooks/useRole';
 import OwnDictionary from '../../pages/Profile/underPages/OwnDictionary/OwnDictionary';
 import Administration from '../../pages/Profile/underPages/Administration/Administration';
 import HomeWork from '../../pages/Profile/underPages/Homework/HomeWork';
+import './Tabs.scss';
 
 const CreateTest = React.lazy(() => import('../../pages/Profile/underPages/Create-test/Cteate-test'));
 
@@ -34,64 +34,64 @@ const Tabs: React.FC = () => {
           </Button>
         </NavItem>
         <NavItem>
-          <NavLink
+          <Button marginY={8} marginRight={12} iconAfter={ManualIcon}
             className={classnames({ active: location.pathname === "/profile/dictionary" })}
             onClick={() => { 
               history.push("/profile/dictionary");
             }}
           >
             <span>dictionary</span>
-          </NavLink>
+          </Button>
         </NavItem>
         <NavItem>
-          <NavLink
+          <Button marginY={8} marginRight={12} iconAfter={ListIcon}
             className={classnames({ active: location.pathname === "/profile/results" })}
             onClick={() => {
               history.push("/profile/results");
             }}
           >
             <span>results</span>
-          </NavLink>
+          </Button>
         </NavItem>
         <NavItem>
-          <NavLink
+          <Button marginY={8} marginRight={12} iconAfter={ResolveIcon}
             className={classnames({ active: location.pathname === "/profile/all tests" })}
             onClick={() => { 
               history.push("/profile/all tests");
             }}
           >
             <span>all tests</span>
-          </NavLink>
+          </Button>
         </NavItem>
         <NavItem>
-          <NavLink
+          <Button marginY={8} marginRight={12} iconAfter={EditIcon}
             className={classnames({ active: location.pathname === "/profile/create test" })}
             onClick={() => { 
               history.push("/profile/create test");
             }}
           >
             <span>create test</span>
-          </NavLink>
+          </Button>
         </NavItem>
         <NavItem>
-          <NavLink
+          <Button marginY={8} marginRight={12} iconAfter={ManualIcon}
             className={classnames({ active: location.pathname === "/profile/own dictionary" })}
             onClick={() => { 
               history.push("/profile/own dictionary");
             }}
           >
             <span>own dictionary</span>
-          </NavLink>
+          </Button>
         </NavItem>
         <NavItem>
-          <NavLink
+          <Button marginY={8} marginRight={12} iconAfter={HomeIcon}
             className={classnames({ active: location.pathname === "/profile/home work" })}
             onClick={() => { 
               history.push("/profile/home work");
             }}
           >
             <span>home page</span>
-          </NavLink>
+          </Button>
         </NavItem>
         {
           role === "admin" && (

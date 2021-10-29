@@ -152,10 +152,7 @@ const HeaderX: React.FC = () => {
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon" onClick={() => setIsMobileMenu(!isMobileMenu)}></span>
         </button>
-          {/* <form className="d-flex">
-            <input className="form-control me-sm-2" type="text" placeholder="Search">
-            <button className="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-          </form> */}
+
           <LinkList />
         </div>
           <MobileMenu show={isMobileMenu} setIsMobileMenu={setIsMobileMenu}/>

@@ -1,5 +1,6 @@
 .table-words {
   height: 500px;
+  margin-top: 20px;
   overflow-y: scroll;
 
   .word-item {
@@ -14,14 +15,22 @@
 }
 
 .dictionary-tabs {
-  display: flex;
   justify-content: start;
-  height: 30px;
+  height: 46px;
   position: relative;
+  position: sticky;
 }
 
 .option {
   cursor: pointer;
+}
+
+.close-part {
+  display: none;
+}
+
+.show-part {
+  display: block;
 }
 
 .close {
@@ -32,6 +41,24 @@
   display: block;
 }
 
+.table-item {
+  display: flex;
+  flex-direction: column;
+}
+
 .tab-item {
-  padding: 5px;
+  padding: 10px;
+  background-color: rgb(233, 233, 233);
+
+  p {
+    b {
+      color: rgb(94, 138, 77);
+    }
+    background-color: rgb(199, 199, 199);
+    border-radius: 5px;
+  }
+}
+
+.flex-btn-group {
+  display: flex;
 }
