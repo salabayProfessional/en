@@ -7,6 +7,7 @@ const Main: React.FC = () => {
 
   return (
     <div className="page">
+      <h1>Main</h1>
       <Carousel />
       <Proposition />
     </div>
