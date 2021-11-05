@@ -1,0 +1,2 @@
+.home-work-item{width:250px;height:150px;background-color:#ebe9e9;border-radius:10px;padding:5px;margin:10px}@media (max-width:400px){.home-work-item{width:250px;height:150px;background-color:#ebe9e9;border-radius:10px;padding:5px;margin:5px}}.active-homework{border:3px solid green}.homework{display:flex}@media (max-width:400px){.homework{display:flex;flex-direction:column}}@media (max-width:400px){.homework-list{display:flex;width:100%;overflow-x:auto}}
+/*# sourceMappingURL=8.8526810c.chunk.css.map */
