@@ -1,2 +1,0 @@
-(this.webpackJsonptrainee=this.webpackJsonptrainee||[]).push([[11],{439:function(t,e,i){"use strict";i.r(e);i(0);var n=i(2);e.default=function(){return Object(n.jsx)("div",{children:Object(n.jsx)("h1",{className:"title",children:"Administration"})})}}}]);
-//# sourceMappingURL=11.9fe4f507.chunk.js.map
