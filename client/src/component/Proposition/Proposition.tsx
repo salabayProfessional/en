@@ -7,8 +7,8 @@ const Proposition: React.FC = () => {
 
   return (
     <motion.div
-      animate={{y: 0, opacity: 1}}
-      initial={{y: "-120%"}}
+      animate={{x: 0, opacity: 1}}
+      initial={{x: "-120%"}}
       transition={{duration: 1.5, opacity: 0}}
       className="Proposition"
     >

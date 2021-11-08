@@ -9,9 +9,4 @@
     position: fixed;
     right: 0;
   }
-
-  @media (max-width: 400px) {
-    display: flex;
-    flex-direction: column;
-  }
 }

@@ -1,3 +1,4 @@
+import { Button } from "evergreen-ui";
 import React, { useState } from "react";
 import { Table } from "reactstrap";
 import Row from "../../../../component/Row/Row";
@@ -9,48 +10,71 @@ import "./OwnDictionary.scss";
 
 const OwnDictionary: React.FC = () => {
   const ownDictionary: any = useOwnDictionary();
-  const [active, setActive] = useState("");
-  const [activePart, setActivePart] = useState("");
+  const [activeWord, setActiveWord] = useState("");
+  const [activePart, setActivePart] = useState("1 part");
+  const [activePartOptions, setActivePartOptions] = useState("");
+  const [isModal, setIsModal] = useState<boolean>(false);
 
-  const newActive = (word: string) => {
-    if(active === word) {
-      setActive("");
-    }else {
-      setActive(word);
-    };
+  const toggleModal = () => setIsModal(!isModal);
+
+  const newActive = (word: string) => activeWord === word? setActiveWord("") : setActiveWord(word);
+  const newActivePartOptions = (part: string) => activePartOptions === part? setActivePartOptions("") : setActivePartOptions(part);
+
+  const listWords = () => {
+    const idx = ownDictionary.findIndex((item: any) => item.part === activePart);
+
+    return ownDictionary[idx]?.words?.map((word: any) => (
+      <DataWords data={word} active={activeWord} newActive={newActive} key={generateString()} activePart={activePart}/>
+    ));
   };
 
-  const idx = ownDictionary.findIndex((item: any) => item.part === activePart);
-
-  const listWords = ownDictionary[idx]?.words?.map((word: any) => {
-    return (
-      <DataWords data={word} active={active} newActive={newActive} key={generateString()}/>
-    )
-  });
+  if(isModal) {
+    prompt();
+  };
 
   const dictionaryTabs = ownDictionary.map((part: any) => {
     return (
-      <button 
-        key={generateString()} 
-        className="btn btn-outline-info"
-        onClick={() => setActivePart(part.part)}
-      >
-        {part.part}
-      </button>
+      <div className="own-tabs">
+        <Button 
+          marginY={8} 
+          marginRight={12}
+          key={generateString()} 
+          onClick={() => setActivePart(part.part)}
+          onDoubleClick={() => newActivePartOptions(part.part)}
+        >
+          {part.part}
+        </Button>
+        <div className={`${activePartOptions === part.part? "show" : "hide"} part-option`}>
+          <Button 
+            marginY={8} 
+            marginRight={12}
+            key={generateString()} 
+            onClick={() => toggleModal}
+          >
+            add word
+          </Button>
+          <Button 
+            marginY={8} 
+            marginRight={12}
+            key={generateString()} 
+          >
+            shuffle
+          </Button>
+        </div>
+      </div>
     )
   });
 
   return (
-    <div className="own-dictionary">
+    <div>
       <Row
-        Left={<div>
-          <div className="dictionary-tabs">
-            {dictionaryTabs}
-          </div>
-          <Table className="bg-light" style={{height: "100%"}}>{listWords}</Table>
+        Left={
+        <div>
+          {dictionaryTabs}
+          <Table className="bg-light table-scroll top-20" style={{height: "100%"}}>{listWords()}</Table>
         </div>}
-        Right={<SearchWord />}
         fixed="right"
+        Right={<SearchWord />}
       />
     </div>
   )

@@ -3,7 +3,7 @@
   position: fixed;
   z-index: 100;
   right: 0%;
-  top: 75px;
+  padding-top: 49px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -83,15 +83,4 @@
   & .active {
     background: #00e490;
   } 
-
-  @media (max-width: 400px) {
-    height: 73%;
-    position: fixed;
-    z-index: 100;
-    right: 0%;
-    top: 75px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
 }

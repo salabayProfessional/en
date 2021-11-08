@@ -3,7 +3,7 @@ export interface InitialValues {
   amount: number,
   type: string,
   timer: number,
-  selectedWords: { 
+  words: { 
     en: string, 
     ua: string 
   }[],

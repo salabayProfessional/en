@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import {Form, Formik} from 'formik';
 import { useDispatch, useSelector } from 'react-redux';
-import { makeTest, shuffle, auditTranslate } from '../../specialFunction/specialFunction';
+import { makeTest, shuffle, equalAnswerAndWord } from '../../specialFunction/specialFunction';
 import { push_audited_test } from '../../store/slices/resultReducer';
 import { reset_test } from "../../store/slices/testsReducer";
 import Options from '../../component/Options/Options';
@@ -10,6 +10,7 @@ import View from './View';
 import Timer from '../../component/Timer/Timer';
 import { RootReducer } from '../../store/slices/types';
 import { InitialValues } from './types';
+import { optionsForTest } from '../../component/Options/OptionsType';
 
 const makeRandomArr = (arr: any) => {
   let randomArr = []; 
@@ -41,7 +42,7 @@ const Test: React.FC = () => {
 
   const onSubmit = (values: any) => {
     values.answers.push(values.answer);
-    const auditedTest = auditTranslate(test, values.answers, options, random, startTime);
+    const auditedTest = equalAnswerAndWord(test, values.answers, options, random, startTime);
     dispatch(push_audited_test(auditedTest));
     setSeeResults(true);
     setCount(0);
@@ -78,7 +79,9 @@ const Test: React.FC = () => {
   return (
     <div className="page">
       { start && <Timer timer={60} /> }
-      <Options isOpen={isOptions} />
+      <Options isOpen={isOptions} setIsOption={() => setIsOptions(false)}> 
+        {optionsForTest}
+      </Options>
 
       <ModalNotice isModal={seeResults} toggle={() => setSeeResults(!seeResults)}/>
 

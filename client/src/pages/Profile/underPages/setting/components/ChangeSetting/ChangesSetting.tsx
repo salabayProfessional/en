@@ -1,5 +1,6 @@
+import { Button } from 'evergreen-ui';
 import React from 'react'
-import { Button, FormGroup, Input, Label } from 'reactstrap';
+import { FormGroup, Input, Label } from 'reactstrap';
 import Row from '../../../../../../component/Row/Row';
 import avatar from "../../../../../../images/photo.jpeg";
 import './ChangeSetting.scss';
@@ -15,17 +16,17 @@ const ChangesSetting: React.FC = () => {
           <FormGroup>
             <Label for="Name">Change Name</Label>
             <Input className="form-control" type="text" placeholder="name" name="name" />
-            <Button type="button" className="btn btn-success btn-bg">Change name</Button>
+            <Button type="button" className="top-10">Change name</Button>
           </FormGroup>
           <FormGroup>
             <Label for="Password">Change Password</Label>
             <Input className="form-control" type="password" placeholder="password" name="password" id="password" />
-            <Button type="button" className="btn btn-success btn-bg">Change password</Button>
+            <Button type="button" className="top-10">Change password</Button>
           </FormGroup>
           <FormGroup>
             <Label for="Name">Change Email</Label>
             <Input className="form-control" type="text" placeholder="email" name="email" id="email" />
-            <Button type="button" className="btn btn-success btn-bg">Change email</Button>
+            <Button type="button" className="top-10">Change email</Button>
           </FormGroup>
           </div>
         )}

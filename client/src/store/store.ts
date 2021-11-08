@@ -10,7 +10,7 @@ const persistConfig = {
   transforms: [
     createWhitelistFilter("tests", ["allTests"]),
     createWhitelistFilter("result", ["results"]),
-    createWhitelistFilter("auth", ["dictionary"]),
+    createWhitelistFilter("auth", ["dictionary", "homework"]),
   ],
   whitelist: ["tests", "result", "auth"],
 };

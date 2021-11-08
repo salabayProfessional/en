@@ -5,7 +5,6 @@ import DeleteSetting from './components/DeleteSetting/DeleteSetting';
 import ChangesSetting from './components/ChangeSetting/ChangesSetting';
 
 const Setting: React.FC = () => {
-  // const ref = useRef(null);
 
   const onSubmit = (values: any) => {
     console.log(values)
@@ -19,7 +18,6 @@ const Setting: React.FC = () => {
             <div className="setting-page">
               <div className="user-data">
                 <ChangesSetting />
-                <div className="wid-200"></div>
                 <DeleteSetting />
               </div>
             </div>

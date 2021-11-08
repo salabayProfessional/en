@@ -1,19 +1,19 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Main from '../../pages/Main/Main';
-import Profile from '../../pages/Profile/Profile';
-import SignIn from '../../pages/Sign-in/Sign-in';
-import Tests from '../../pages/Tests/Tests';
-import HeaderX from '../header/headerX';
-import "./app.scss";
-import Story from '../../pages/Story/Story';
+import Main from '../../Pages/Main/Main';
+import Profile from '../../Pages/Profile/Profile';
+import SignIn from '../../Pages/Sign-in/Sign-in';
+import Tests from '../../Pages/Tests/Tests';
+import Header from '../Header/Header';
+import Story from '../../Pages/Story/Story';
 import { Container } from 'reactstrap';
+import "./App.scss";
 
 const App: React.FC = () => {
 
   return (
       <Router>
-        <HeaderX />
+        <Header />
         <Switch>
           <Container fluid>
             <Route path="/main" exact component={Main}/>

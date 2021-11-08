@@ -1,3 +1,5 @@
+import { CardTitle } from "reactstrap";
+
 export interface DictionaryReducer {
   dictionaryWords: {en: string, ua: string}[],
   dictionaryTests: {
@@ -68,7 +70,8 @@ export interface AuthReducer {
   photo: string,
   describe: string,
   password: string,
-  dictionary: {part: string, words: WordData[]}[],
+  dictionary: { part: string, words: WordData[] }[],
+  homework: { title: string, words: {en: string, ua: string}[]}[]
 }
 
 export interface RootReducer {

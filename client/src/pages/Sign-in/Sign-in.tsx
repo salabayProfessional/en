@@ -7,10 +7,10 @@ import SignOutForm from './component/Sign-out-form/Sign-out-form';
 const SignIn: React.FC = () => {
 
   const isAuth = useAuth()
-
+  console.log(isAuth)
   return (
     <div className="page">
-      <div className="sign-in__inner">
+      <div className="sign-in">
         {
           isAuth? <SignOutForm /> : <SignInForm />
         }

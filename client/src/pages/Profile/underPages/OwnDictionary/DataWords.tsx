@@ -1,15 +1,20 @@
 import React from 'react'
+import { Button, TrashIcon, ManualIcon } from 'evergreen-ui'
+import { useDispatch } from 'react-redux'
 import { generateString } from '../../../../specialFunction/specialFunction'
+import { remove_word } from '../../../../store/slices/authReducer'
 
-const DataWords: React.FC<{data: any, active: string, newActive: any}> = ({data, active, newActive}) => {
-
+const DataWord: React.FC<{data: any, active: string, newActive: any, activePart: string}> = ({data, active, newActive, activePart}) => {
+  const dispatch = useDispatch();
   return (
-    <>
-      <tr className="word-item col-11">
-        <th>{data?.word}</th>
-        <th className="option col-1" onClick={() => newActive(data.word)}>...</th>
+    <tbody className="">
+      <tr className="">
+        <th className="">{data?.word}</th>
+        <th><Button marginY={8} marginRight={12} iconBefore={ManualIcon} onClick={() => newActive(data.word)}></Button></th>
+        <th><Button marginY={8} marginRight={12} iconBefore={TrashIcon} onClick={() => dispatch(remove_word({word: data.word, part: activePart}))} intent="danger"></Button></th>
       </tr>
-      <div className={`tab-item ${active === data?.word? "show" : "close"}`}>
+
+      <div className={`${active === data?.word? "show" : "hide"}`}>
         <p><b>Phonetics:</b> {data?.phonetics[0]?.text}</p>
         <p><b>Meanings:</b> part of speech: {data?.meanings[0]?.partOfSpeech}<br /></p>
         <p><b>Definitions:</b> {data?.meanings[0]?.definitions[0]?.definition}<br /></p>
@@ -17,8 +22,8 @@ const DataWords: React.FC<{data: any, active: string, newActive: any}> = ({data,
         <p><b>Example:</b> {data?.meanings[0]?.definitions[0]?.example}<br /></p>
         <p><b>Origin</b> {data?.origin}<br /></p>
       </div>
-    </>
+    </tbody>
   )
-}
+};
 
-export default DataWords
+export default DataWord;

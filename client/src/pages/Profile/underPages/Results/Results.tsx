@@ -5,8 +5,8 @@ import { ModalResult } from '../../../../component/Modal/Modals';
 import RestrictedList from '../../../../component/RestrictedList/RestrictedList';
 import { generateString } from '../../../../specialFunction/specialFunction';
 import { RootReducer } from '../../../../store/slices/types';
-import "./Results.scss";
 import Statistics from './Statistics';
+import "./Results.scss";
 
 const Results: React.FC = () => {
   const results = useSelector((state: RootReducer) => state.result.results);
@@ -58,7 +58,7 @@ const Results: React.FC = () => {
       }
 
       {
-        results.length > 1 && <p className="under-title">"you don't pass a test yet. And then here is nothing"</p>
+        results.length < 1 && <p className="under-title">"you don't pass a test yet. And then here is nothing"</p>
       }
     </div>
   )
