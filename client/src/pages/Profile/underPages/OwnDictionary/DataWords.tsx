@@ -8,13 +8,15 @@ const DataWord: React.FC<{data: any, active: string, newActive: any, activePart:
   const dispatch = useDispatch();
   return (
     <tbody className="">
-      <tr className="">
-        <th className="">{data?.word}</th>
-        <th><Button marginY={8} marginRight={12} iconBefore={ManualIcon} onClick={() => newActive(data.word)}></Button></th>
-        <th><Button marginY={8} marginRight={12} iconBefore={TrashIcon} onClick={() => dispatch(remove_word({word: data.word, part: activePart}))} intent="danger"></Button></th>
+      <tr className="space-between">
+        <th>{data?.word}</th>
+        <div>
+          <th><Button marginY={8} marginRight={12} iconBefore={ManualIcon} onClick={() => newActive(data.word)}></Button></th>
+          <th><Button marginY={8} marginRight={12} iconBefore={TrashIcon} onClick={() => dispatch(remove_word({word: data.word, part: activePart}))} intent="danger"></Button></th>
+        </div>
       </tr>
 
-      <div className={`${active === data?.word? "show" : "hide"}`}>
+      <div className={`${active === data?.word? "show" : "hide"} word-info`}>
         <p><b>Phonetics:</b> {data?.phonetics[0]?.text}</p>
         <p><b>Meanings:</b> part of speech: {data?.meanings[0]?.partOfSpeech}<br /></p>
         <p><b>Definitions:</b> {data?.meanings[0]?.definitions[0]?.definition}<br /></p>

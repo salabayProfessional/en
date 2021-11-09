@@ -6,9 +6,9 @@ const SignOut: React.FC = () => {
   const dispatch = useDispatch();
 
   return (
-    <form className="sign-out col-12 col-lg-6">
+    <form>
       <h1 className="title">Sign out</h1>
-      <p className="under-title">Now you can sign ou because you sign in</p>
+      <p className="under-title">Buy! buy!</p>
       <button type="button" onClick={() => dispatch(log_out())} className="btn btn-danger btn-bg btn-10">Sign out</button>
     </form>
   )

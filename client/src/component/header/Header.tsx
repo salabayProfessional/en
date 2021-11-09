@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import './Header.scss';
 
-const LinkList:React.FC= () => {
+const LinkList:React.FC<{isMenu: boolean}> = ({isMenu}) => {
   // const isAuth = useAuth();
 
   return (
-    <ul className={"navbar-nav me-auto link-list"}>
+    <ul className={`navbar-nav me-auto link-list ${isMenu && "hide"}`}>
       <li className="nav-item">
         <NavLink 
           activeStyle={{
@@ -70,7 +70,7 @@ const LinkList:React.FC= () => {
             color: "black",
             textDecoration: "none"
           }}
-          to="/sign in"
+          to="/sign-in"
         >
           sign in
         </NavLink>
@@ -102,11 +102,11 @@ const Header: React.FC = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark header-fixed">
       <div>
-        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
-          <span className="navbar-toggler-icon btn-menu" onClick={() => setIsMobileMenu(!isMobileMenu)}></span>
+        <button onClick={() => setIsMobileMenu(!isMobileMenu)} className="navbar-toggler toggle-mobile" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+          <span className="navbar-toggler-icon btn-menu"></span>
         </button>
 
-        <LinkList />
+        <LinkList isMenu={isMobileMenu}/>
       </div>
   </nav>
   )

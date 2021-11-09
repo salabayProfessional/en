@@ -9,6 +9,7 @@ import { Formik, Form, Field } from "formik";
 import { Button, Table, FormGroup, ModalHeader, ModalBody } from 'reactstrap';
 import { allWords } from "../../mockData/words";
 import "./Modal.scss";
+import { add_dictionary_part } from '../../store/slices/dictionaryReducer';
 
 const ModalInfo: React.FC<ModalInfoTypes> = ({
   isModal, 
@@ -56,6 +57,7 @@ const ModalInfo: React.FC<ModalInfoTypes> = ({
 const ModalCreatedTest: React.FC<ModalType> = ({
   isModal, 
   toggle,
+  create = "test",
 }) => {
   const dispatch = useDispatch();
 
@@ -71,7 +73,7 @@ const ModalCreatedTest: React.FC<ModalType> = ({
 
   const allWordsList = allWords.map((word: {en: string, ua: string}, idx: number) => {
     return (
-      <tr key={`list-success-${idx}`}>
+      <tr key={`list-success-${idx}`} className="line-top">
         <td>{word.en}</td>
         <td>{word.ua}</td>
         <th><Field type="checkbox" value={word.en}/></th>
@@ -80,12 +82,19 @@ const ModalCreatedTest: React.FC<ModalType> = ({
   });
 
   const onSubmit = (values: InitialValuesModalCreate) => {
-    dispatch(create_test({
-      name: values.name,
-      words: values.words,
-      type: "en-ua",
-      options: values.options
-    }));
+    if(create === "test") {
+      dispatch(create_test({
+        name: values.name,
+        words: values.words,
+        type: "en-ua",
+        options: values.options
+      }));
+    } else {
+      dispatch(add_dictionary_part({
+        name: values.name,
+        words: values.words,
+      }));
+    }
     toggle();
   }
 
@@ -98,7 +107,7 @@ const ModalCreatedTest: React.FC<ModalType> = ({
     >
       <Formik initialValues={initialValues} onSubmit={(values) => onSubmit(values)} >
         <Form>
-          <tbody className="words-list">
+          <tbody className="table-words padding-5">
             { allWordsList }
           </tbody>
           <FormGroup>

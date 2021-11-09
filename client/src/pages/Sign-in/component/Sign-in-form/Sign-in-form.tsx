@@ -32,7 +32,7 @@ const SignInForm: React.FC = () => {
   const { register, handleSubmit } = useForm({resolver: yupResolver (schema)});
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="sign-in col-12 col-lg-6">
+    <form onSubmit={handleSubmit(onSubmit)}>
       <div >
         <FormGroup>
           <Label for="name">Email</Label>

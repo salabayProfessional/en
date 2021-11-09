@@ -8,5 +8,9 @@
   .fixed {
     position: fixed;
     right: 0;
+
+    @media (max-width: 724px) {
+      position: static;
+    }
   }
 }

@@ -13,10 +13,10 @@ const Tabs: React.FC = () => {
   const list = (
     <Nav tabs className="tabs">
         <NavItem>
-          <Button marginY={8} marginRight={12} iconAfter={CogIcon}
+        <Button marginY={8} marginRight={12} iconAfter={CogIcon}
             className={classnames({ active: location.pathname === "/profile/setting" })}
             onClick={() => { 
-              history.push("profile/setting");
+              history.push("/profile/setting");
             }}
           >
             <span>setting</span>

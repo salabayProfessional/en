@@ -1,7 +1,7 @@
 import {createSlice} from '@reduxjs/toolkit';
 
 const initialState: any = {
-    dictionaryParts: [],
+    dictionaryTests: [],
 }
 
 const dictionary = createSlice({
@@ -9,16 +9,17 @@ const dictionary = createSlice({
     initialState,
     reducers: {
         add_dictionary_part: (state, action) => {
-            state.dictionaryParts.push(action.payload);
+            state.dictionaryTests.push(action.payload);
         },
         delete_dictionary_part: (state, action) => {
-            const start = state.dictionaryParts.slice(0, action.payload.id);
-            const end = state.dictionaryParts.slice(action.payload.id + 1);
-            state.dictionaryParts = [...start, ...end];
+            const start = state.dictionaryTests.slice(0, action.payload.id);
+            const end = state.dictionaryTests.slice(action.payload.id + 1);
+            state.dictionaryTests = [...start, ...end];
         },
     },
     extraReducers: (state: any) => state
 });
-//export const { } = dictionary.actions;
+
+export const { add_dictionary_part, delete_dictionary_part } = dictionary.actions;
 
 export default dictionary.reducer;

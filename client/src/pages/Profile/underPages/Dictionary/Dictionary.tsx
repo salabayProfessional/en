@@ -3,14 +3,15 @@ import { useForm } from 'react-hook-form';
 import { shuffle } from '../../../../specialFunction/specialFunction';
 import DictionaryOptions from './components/DictionaryOptions/DictionaryOptions';
 import TableWords from './components/DictionaryPart/DictionaryPart';
-import { mockData } from './mockData';
 import "./Dictionary.scss";
-import Row from '../../../../component/Row/Row';
+import Row from "../../../../component/Row/Row";
+import { useAppSelector } from "../../../../hooks/useRedux";
 
 const Dictionary: React.FC = () => {
   const [isList, setIsList] = useState(false);
   const toggleList = () => setIsList(!isList);
-  const [activeDictionary, setActiveDictionary] = useState<any>(mockData[0]);
+  const dictionaries = useAppSelector((state) => state.dictionary.dictionaryTests);
+  const [activeDictionary, setActiveDictionary] = useState<any>(dictionaries[0]);
   const [isHideColumnUa, setIsHideColumnUa] = useState(false);
   const [isHideColumnEn, setIsHideColumnEn] = useState(false);
   const toggleHideColumnUa = () => setIsHideColumnUa(!isHideColumnUa);
@@ -52,7 +53,6 @@ const Dictionary: React.FC = () => {
               />
             </div>
           )}
-
           Right={(
             <DictionaryOptions 
                 isList={isList}

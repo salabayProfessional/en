@@ -7,6 +7,7 @@ export interface ModalInfoTypes {
 export interface ModalType {
   isModal: boolean,
   toggle: () => void,
+  create?: "test" | "dictionary"
 }
 
 export interface InitialValuesModalCreate {

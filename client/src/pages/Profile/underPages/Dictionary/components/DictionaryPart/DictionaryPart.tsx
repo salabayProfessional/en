@@ -11,7 +11,7 @@ const TableWords: React.FC<any> = ({
 
   return (
     <>
-      <Table className="table-words">
+      <Table>
         <thead>
           <tr>
             <th>#</th>
@@ -25,7 +25,7 @@ const TableWords: React.FC<any> = ({
               activeDictionary?.words.map((word: any, idx: number) => {
                 return (
                   <tr key={generateString()}>
-                    <th scope="row">{ idx }</th>
+                    <th scope="row">{ idx + 1 }</th>
                     {!isHideColumnEn? <td className="words-column">{ word.en }</td> : <td className="words-column"></td>}
                     {!isHideColumnUa? <td className="words-column">{ word.ua }</td> : <td className="words-column"></td>}
                     <td><input className="form-control" defaultValue="" {...register(`answers${word.en}`)} /></td>

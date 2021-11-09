@@ -17,3 +17,12 @@
   height: 100%;
   overflow-y: scroll;
 }
+
+.space-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+.word-info {
+  padding: 10px;
+}

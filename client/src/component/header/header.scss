@@ -29,3 +29,13 @@
   border-radius: 0px 10px 10px 10px;
   margin-left: 40px;
 }
+
+.hide {
+  @media (max-width: 400px) {
+    display: none !important;
+  }
+}
+
+.toggle-mobile {
+  margin-left: 85%;
+}

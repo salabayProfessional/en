@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { ModalCreatedTest } from '../../../../../../component/Modal/Modals'
 import { Table } from 'reactstrap';
 import { generateString } from '../../../../../../specialFunction/specialFunction';
-import { mockData } from '../../mockData';
 
 const DictionaryOptions: React.FC<any> = ({
   isList, 
@@ -13,8 +13,10 @@ const DictionaryOptions: React.FC<any> = ({
   toggleHideColumnUa,
   toggleHideColumnEn
 }) => {
+  const [isModal, setIsModal] = useState(false);
+  const toggleIsModal = () => setIsModal(!isModal);
 
-  const tableSettingList = mockData.map((item: any) => {
+  const list = activeDictionary?.map((item: any) => {
     return (
       <>
         <tbody onClick={() => toggleActiveItem(item)} key={generateString()}>
@@ -40,11 +42,12 @@ const DictionaryOptions: React.FC<any> = ({
 
   return (
     <div className="dictionary-options">
+      <ModalCreatedTest toggle={toggleIsModal} isModal={isModal} />
       <div className="dictionary-options__party">
         <input type="text" placeholder="filter" className="form-control btn-bg" />
       </div>
       <div className="dictionary-options__party">
-        <button className="btn btn-outline-success btn-100">Add new dictionary</button>
+        <button className="btn btn-outline-success btn-100" onClick={toggleIsModal}>Add new dictionary</button>
       </div>
       <div className="dictionary-options__party">
         <button className="btn btn-outline-success btn-100">DELETE</button>
@@ -55,7 +58,7 @@ const DictionaryOptions: React.FC<any> = ({
           isList && (
             <Table hover>
               {
-                tableSettingList
+                list
               }
             </Table>
           )

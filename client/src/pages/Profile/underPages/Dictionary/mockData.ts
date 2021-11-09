@@ -14,28 +14,4 @@ export const mockData = [
       {en: "carry out", ua: "продовжуй"},
     ]
   },
-  {
-    name: "two",
-    words: [
-      {en: "sail", ua: "плавати"},
-      {en: "", ua: ""},
-      {en: "", ua: ""},
-      {en: "", ua: ""},
-      {en: "", ua: ""},
-      {en: "", ua: ""},
-    ]
-  },
-  {
-    name: "tree",
-    words: [
-      {en: "sail", ua: "плавати"},
-      {en: "", ua: ""},
-      {en: "", ua: ""},
-      {en: "", ua: ""},
-      {en: "", ua: ""},
-      {en: "", ua: ""},
-      {en: "", ua: ""},
-      {en: "", ua: ""},
-    ]
-  },
 ];

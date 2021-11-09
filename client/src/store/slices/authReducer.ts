@@ -49,6 +49,9 @@ const auth = createSlice({
       },
       remove_home_work: (state, {payload}) => {
         console.log(state, payload.name)
+      },
+      setRole: (state, {payload}) => {
+        state.role = payload;
       }
     },
 });
@@ -61,6 +64,7 @@ export const {
   remove_word, 
   add_home_work,
   remove_home_work,
+  setRole,
 } = auth.actions;
 
 export default auth.reducer;

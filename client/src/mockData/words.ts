@@ -143,7 +143,6 @@ const allWords = [
     {en: "actually, it's quite the other way around", ua: " На самом деле, это совсем другой способ"},
     {en: "I admit it", ua: "Я визнаю це"},
     {en: "what are your purpose", ua: "яка ваша мета"},
-    {en: "apparently that you love her", ua: "мабуть, ти її любиш"},
     {en: "all that time", ua: "весь цей час"},
     {en: "somehow", ua: "якось"},
     {en: "advance", ua: "заздалегідь"},
